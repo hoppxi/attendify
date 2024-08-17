@@ -17,7 +17,7 @@ export default function Settings() {
 	return (
 	  	<>
 			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Select School" /> : <CoreSearchbarAppbar title="Select School" />}
-			<Container hasSearchbarAppbar hasNavbar={false} hasNavDrawer={false} className={style.container} >
+			<Container hideContextBar hasSearchbarAppbar hasNavbar={false} hasNavDrawer={false} className={style.container} >
 				<div className={style.header}>Select a school to login</div>
 				<div className={style.card_container}>
 					<Card

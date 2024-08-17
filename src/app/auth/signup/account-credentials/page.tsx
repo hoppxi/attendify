@@ -13,7 +13,7 @@ export default function Login() {
     const { isNavDrawerOpen, toggleNavDrawer } = useNavDrawer();
     return(
         <div className={style.app}>
-            <Container hasNavDrawer={false} hasNavbar={false} hasTopAppbar={false} className={`${style.login_card} ${style.login} ${style.container}`}>
+            <Container hideContextBar hasNavDrawer={false} hasNavbar={false} hasTopAppbar={false} className={`${style.login_card} ${style.login} ${style.container}`}>
                 
                 <Logo type="medium" className={style.logo} />
                 <div className={style.form_container}>

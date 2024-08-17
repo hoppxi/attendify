@@ -23,6 +23,10 @@
     height: max-content !important;
 }
 
+.container :last-child {
+    width: 100%;
+}
+
 .form_container {
     display: flex;
     align-items: start;
