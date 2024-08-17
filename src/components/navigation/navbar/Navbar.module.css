@@ -1,0 +1,69 @@
+
+/* Navigation bar */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 102;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: var(--primary-000);
+}
+
+.navbar .btn_navbar {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 6rem;
+    width: 100%;
+    border-radius: .4rem;
+}
+
+.navbar .btn_navbar :first-child {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.navbar .btn_navbar:hover {
+    background-color: transparent;
+}
+
+.navbar .btn_navbar .icon {
+    padding: .2rem 1.2rem .2rem 1.2rem;
+    border-radius: 20rem;
+    transition: all .3s;
+    font-size: 1.6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar .btn_navbar.active .icon {
+    background-color: var(--tint-500);
+    color: var(--text-800);
+}
+
+.navbar .btn_navbar:hover .icon{
+    background-color: var(--secondary-200);
+    font-weight: 700;
+}
+
+.navbar .btn_navbar.active:hover .icon {
+    background-color: var(--tint-700);
+}
+
+.navbar .btn_navbar .text {
+    font-size: .9rem;
+}
+
+.navbar.no_label .btn_navbar:not(.active) .text {
+    display: none;
+}
+
+.navbar.no_label_active .btn_navbar .text {
+    display: none;
+}

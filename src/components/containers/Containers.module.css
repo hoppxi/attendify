@@ -1,0 +1,105 @@
+
+.container {
+    height: 100svh;
+    /* width: 100%; */
+    overflow-y: auto;
+    transition: width .3s ease;
+    border-radius: 2rem;
+    padding-bottom: 2rem !important;
+}
+
+.container.has_navbar {
+    height: calc(100svh - 5rem);
+}
+
+.container.has_small_screen_top_appbar {
+    height: calc(100svh - 4rem);
+    margin-top: 4rem;
+}
+
+.container.has_small_screen_top_appbar.has_tab {
+    height: calc(100svh - 8rem);
+    margin-top: 8rem;
+}
+
+.container.has_small_screen_top_appbar.has_navbar {
+    height: calc(100svh - 9rem);
+    margin-top: 4rem;
+}
+
+.container.has_small_screen_top_appbar.has_tab.has_navbar {
+    height: calc(100svh - 13rem);
+    margin-top: 8rem;
+}
+
+.container.large_screen.has_top_appbar {
+    height: calc(100svh - 4rem);
+    
+}
+
+.container.large_screen.has_top_appbar.has_tab {
+    height: calc(100svh - 8rem);
+    /* margin-top: 4rem; */
+}
+
+.container.large_screen.has_nav_drawer {
+    width: calc(100svw - 8rem);
+    float: right;
+}
+
+.container.large_screen.has_nav_drawer.nav_drawer_open {
+    width: calc(100svw - 23rem);
+    float: right;
+}
+
+.container.has_searchbar_appbar:not(.large_screen) {
+    height: 100svh;
+    padding-top: 7rem;
+}
+
+.container.has_searchbar_appbar.has_navbar:not(.large_screen) {
+    height: calc(100svh - 5rem);
+}
+
+/* Context bar */
+.context_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .2rem;
+    position: sticky;
+    top: 0;
+    border-bottom: .14rem solid var(--secondary-100);
+    background-color: var(--primary-000);
+    z-index: 100;
+    margin-bottom: 1rem;
+    /* transform: translateY(-100%);
+    opacity: 0; */
+    transition-property: transform, opacity;
+    
+}
+
+.context_bar_left,
+.right_Actions {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.title {
+    font-size: 1.4rem;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.animate_context_bar.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+      
+.animate_context_bar.hide {
+        transform: translateY(-100%);
+        opacity: 0;
+    }

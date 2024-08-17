@@ -1,0 +1,254 @@
+
+
+/* Default buttons definition */
+.btn_text,
+.btn_outlined,
+.btn_elevated,
+.btn_fab,
+.btn_filled,
+.btn_icon,
+.btn_filled_tonal,
+.btn_extended,
+.btn_segement {
+    background-color: var(--primary-100);
+    border: none; 
+    padding: .625rem 1.3rem;
+    border-radius: .25rem; 
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .625rem; 
+    text-decoration: none;
+    transition: all .3s ease;
+    font-size: 1rem;
+    padding: .7rem 1.9rem;
+    border-radius: 40rem;
+}
+
+/* Elevated Button style */
+.btn_elevated {
+    background-color: transparent;
+    box-shadow: 0 .1125rem 1rem var(--box-shadow);
+    color: var(--text-100);
+    margin-bottom: 1rem;
+}
+
+.btn_elevated:hover {
+    background-color: var(--secondary-200);
+}
+
+/* Filled button style */
+.btn_filled,
+.btn_filled *:not(.ripple) {
+    background-color: var(--secondary-600);
+    color: var(--text-800);
+    transition: all .4s;
+}
+
+.btn_filled:hover,
+.btn_filled:hover *:not(.ripple) {
+    background-color: var(--secondary-700);
+} 
+
+/* Filled tonal button style */
+.btn_filled_tonal {
+    background-color: var(--secondary-100);
+    color: var(--text-100);
+}
+
+.btn_filled_tonal:hover {
+    background-color: var(--secondary-300);
+}
+
+/* Outlined button style */
+.btn_outlined {
+    border: 0.1424rem solid var(--secondary-600);
+    background-color: transparent;
+    color: var(--text-100);
+}
+
+.btn_outlined:hover {
+    background-color: var(--secondary-200);
+}
+
+/* Text button style */
+.btn_text {
+    border: none;
+    background-color: transparent;
+    color: var(--text-100);
+    transition: background .3s ease;
+}
+
+.btn_text:hover {
+    background-color: var(--secondary-200);
+}
+
+/* Icon button style */
+.btn_icon {
+    border: none;
+    aspect-ratio: 1 / 1 !important;
+    padding: .8rem;
+    max-width: 4rem;
+    background-color: transparent;
+    color: var(--text-100);
+    font-family: 'Material Symbols Outlined' !important;
+    font-size: 1.8rem;
+    user-select: none;
+}
+
+.btn_icon:hover {
+    background-color: var(--secondary-200);
+}
+
+/* Floating action button style */
+.btn_fab {
+    background-color: var(--fab);
+    box-shadow: 0 .5rem 0.625rem #00000036;
+    padding: 1.2rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    font-family: 'Material Symbols Outlined' !important;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.btn_fab:hover {
+    background-color: var(--fab-hover);
+}
+
+/* Extended button style */
+.btn_extended {
+    background-color: var(--secondary-100);
+    color: var(--text-100);
+    box-shadow: 0 .5rem 0.625rem #00000036;
+    padding: 1rem 1.9rem;
+    border-radius: calc(0.625rem*1.3);
+}
+
+.btn_extended .icon {
+    font-size: 1.8rem;
+}
+
+.btn_extended .text {
+    text-wrap: nowrap;
+}
+
+.btn_extended:hover {
+    background-color: var(--secondary-300);
+}
+
+/* Segemented Button style */
+.btn_segemented {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    border: .124rem solid var(--secondary-600);
+    border-radius: 30rem; /* Max border */
+    gap: 0;
+    width: fit-content;
+}
+
+.btn_segement_fc {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 100%;
+}
+
+.btn_segement_c {
+    border-radius: 0;
+    border-left: .124rem solid var(--secondary-600) !important;
+}
+
+.btn_segement_lc{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: .124rem solid var(--secondary-600) !important;
+}
+
+.btn_segement:hover {
+    background-color: var(--secondary-200);
+}
+.btn_segemented_selected {
+    background-color: var(--secondary-100);
+}
+
+.btn_segemented_selected::before {
+    content: 'check';
+    font-family: 'Material Symbols Outlined' !important;
+    scale: 1.7;
+}
+
+.btn_segemented_selected:hover {
+    background-color: var(--secondary-300);
+}
+
+
+/* Tooltip definition */
+.btn_container {
+    position: relative; 
+    display: inline-block;
+    /* width: 100%;  */
+    min-width: 0rem;
+}
+
+.btn_tooltip {
+    position: absolute;
+    bottom: -35px; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333; 
+    color: #fff; 
+    padding: 8px; 
+    border-radius: 4px; 
+    font-size: 12px; 
+    white-space: nowrap; 
+    opacity: 0;
+    visibility: hidden; 
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    z-index: 1000; 
+}
+
+.btn_container:hover .btn_tooltip {
+    opacity: 1; 
+    visibility: visible;
+}
+  
+.btn_container button {
+    position: relative;
+    z-index: 1; 
+}
+
+@keyframes tooltip-zoom {
+    from {scale: 0;}
+    to {scale: 1;}
+}
+
+/* Ripple effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-animation 900ms ease-out;
+    background-color: rgba(0, 0, 0, 0.15); 
+    pointer-events: none;
+    /* transition: opacity 300ms ease-out; */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.text,
+.icon {
+    width: 100%;
+    display: flex;
+}

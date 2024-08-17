@@ -1,0 +1,93 @@
+/* components/Checkbox.module.css */
+
+.toggle_input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+    cursor: pointer;
+    width: fit-content;
+}
+  
+.input {
+    display: none;
+}
+
+.checkbox_cont {
+    border-radius: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40rem;
+    aspect-ratio: 1 / 1 !important;
+    padding: .8rem;
+    max-width: 3rem;
+    transition: all .3s;
+}
+
+.toggle_input:hover .checkbox_cont:not(.checked) {
+    background-color: var(--secondary-200);
+}
+
+.custom_input {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--secondary-600);
+    /* border-radius: 3px; */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input[type='checkbox'] ~ .checkbox_cont .custom_input {
+    border-radius: 3px;
+}
+  
+.input[type='radio'] ~ .checkbox_cont  .custom_input {
+    border-radius: 50%;
+}
+
+.custom_input::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    clip-path: polygon(14% 44%, 0% 65%, 50% 100%, 100% 14%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.input[type='checkbox'] ~ .checkbox_cont .checked, 
+.input[type='radio'] ~ .checkbox_cont .checked {
+    border-color: var(--checkbox-border-checked);
+    background-color: var(--checkbox-bg-checked);
+}
+  
+.input[type='checkbox'] ~ .checkbox_cont .checked::before {
+    background-color: var(--text-000);
+    transform: scale(1);
+}
+  
+.input[type='radio'] ~ .checkbox_cont .checked::before {
+    width: 10px;
+    height: 10px;
+    background-color: var(--text-000);
+    transform: scale(1);
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+  
+.primary {
+    --checkbox-border-checked: var(--link-000);
+    --checkbox-bg-checked: var(--link-000);
+}
+  
+.secondary {
+    --checkbox-border-checked: var(--danger-000);
+    --checkbox-bg-checked: var(--danger-000);
+}
+  

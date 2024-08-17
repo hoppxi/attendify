@@ -1,0 +1,68 @@
+
+/* Base Link Styles */
+.link {
+    color: var(--link-700); /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+/* Link Types */
+.link_primary {
+    color: var(--link-700); /* Primary link color */
+}
+  
+.link_secondary {
+    color: var(--secondary-500); /* Secondary link color */
+}
+  
+.link_success {
+    color: var(--success-700); /* Success link color */
+}
+  
+.link_danger {
+    color: var(--danger-700); /* Danger link color */
+}
+  
+.link_warning {
+    color: var(--warning-600); /* Warning link color */
+}
+  
+.link_info {
+    color: var(--link-500); /* Info link color */
+}
+  
+.link_light {
+    color: var(--secondary-200); /* Light link color */
+}
+  
+.link_dark {
+    color: var(--secondary-900); /* Dark link color */
+}
+  
+  /* Hover and Focus States */
+.link:hover,
+.link:focus {
+    text-decoration: underline;
+}
+  
+.link:hover {
+    opacity: 0.8;
+}
+  
+.link:focus {
+    outline: none;
+    box-shadow: 0 0 0 .1875rem rgba(0, 123, 255, 0.3);
+}
+
+.padded {
+    padding: .5rem;
+    border-radius: .2rem;
+    width: fit-content;
+    /* position: relative; */
+    /* overflow: hidden; */
+}
+
+.padded:hover {
+    background-color: var(--secondary-200);
+    text-decoration: none;
+}

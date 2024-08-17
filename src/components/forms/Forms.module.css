@@ -1,0 +1,75 @@
+
+/* Form and input style */
+/* Form comnents */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.form_context {
+    width: 100%;
+}        
+.form_heading {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+    
+.form_sub_heading {
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+    
+.form_details {
+    text-align: justify;
+}
+
+.form_inputs {
+    width: 100%;
+}
+
+.form_links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+    margin-top: 1rem;
+}
+
+.actions_right {
+    justify-content: flex-end;
+}
+  
+.actions_column {
+    flex-direction: column;
+}
+  
+.actions_row {
+    flex-direction: row;
+}
+  
+.actions_fill_row {
+    flex-direction: row;
+    width: 100%;
+}
+  
+.actions_fill_column {
+    flex-direction: column;
+    height: 100%;
+}
+
+.actions_fill_column *,
+.actions_fill_row * {
+    width: 100%;
+}

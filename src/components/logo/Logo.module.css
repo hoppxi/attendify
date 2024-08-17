@@ -1,0 +1,14 @@
+.logo_small {
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.logo_medium {
+    width: 8rem;
+    margin-top: .31rem;
+    height: 2rem;
+}
+
+.logo_large {
+    max-width: 20rem;
+}

@@ -1,0 +1,93 @@
+.appbar_cont {
+    padding: 0 !important;
+    border-radius: 20rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--searchbar-appbar-bgc);
+    box-shadow: 0 .21rem 1rem 0 var(--searchbar-appbar-box-shadow);
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.filled_bgc .searchbar_trigger {
+    border-radius: 0;
+}
+
+.searchbar_trigger {
+    /* padding: .3rem; */
+    width: 100%;
+    position: relative;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem;
+    padding-left: 2rem;
+}
+
+.searchbar :last-child {
+    font-size: 1.4rem;
+    user-select: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.right_buttons {
+    display: flex;
+    align-items: center;
+    gap: .1rem;
+    position: absolute;
+    top: 0;
+    right: .31rem;
+    bottom: 0;
+}
+
+.left_button {
+    position: absolute;
+    top: 0;
+    left: .31rem;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+}
+
+.transparent_bgc {
+    padding: 1rem;
+}
+
+.transparent_bgc, .filled_bgc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+  
+.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+
+.zoomIn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.zoomOut {
+    opacity: 0;
+    transform: scale(.8);
+}

@@ -1,0 +1,39 @@
+.top_appbar {
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 4rem;
+    background-color: var(--primary-000);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: .3rem;
+}
+
+.top_appbar .t_ab_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    padding: .5rem;
+}
+
+.top_appbar .t_ab_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.top_appbar .t_ab_center {
+    max-width: 500px;
+    width: 100%;
+}
+
+.top_appbar .title {
+    font-size: 1.7rem;
+}

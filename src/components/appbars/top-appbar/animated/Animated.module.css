@@ -1,0 +1,62 @@
+/* Top appbars type 2 */
+.top_appbar_animated {
+    position: sticky;
+    top: -20rem;
+    z-index: 10;
+    width: 100%;
+}
+
+.top_appbar_animated .title_p {
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.top_appbar_animated .title_p .app_icon {
+    font-size: 5rem;
+}
+
+.top_appbar_animated .title_p .app_name {
+    font-size: 4rem;
+}
+
+.top_appbar_animated .t_ab_a_bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-000);
+    padding: .3rem;
+    /* border-radius: 0 0 2rem 2rem !important; */
+}
+
+.top_appbar_animated .t_ab_a_bar_left {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    height: auto;
+    padding: .3rem;
+}
+
+.top_appbar_animated .t_ab_a_bar_left .title_s {
+    font-size: 2rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.top_appbar_animated .t_ab_a_bar_right {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}

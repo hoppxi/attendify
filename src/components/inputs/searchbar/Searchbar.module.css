@@ -1,0 +1,26 @@
+.searchbar_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--secondary-100);
+    border-radius: 24px;
+    position: relative;
+}
+
+.search_input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+    font-size: larger;
+}
+
+.search_button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}

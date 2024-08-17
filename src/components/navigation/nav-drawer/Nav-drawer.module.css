@@ -1,0 +1,90 @@
+/* Navigation Drawer */
+.nav_drawer {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: -15rem;
+    z-index: 13;
+    padding: 1rem;
+
+    background-color: inherit;
+
+    max-width: 22rem;
+    width: 100%;
+    border-radius: 0 1rem 1rem 0;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all .3s ease;
+}
+
+.nav_drawer.is_open {
+    left: 0;
+}
+
+.nav_drawer .btn_nav_drawer {
+    width: 100%;
+    padding: 1rem;
+    justify-content: end;
+}
+
+.nav_drawer .btn_nav_drawer :first-child :nth-child(2) {
+    display: none;
+}
+
+.nav_drawer .btn_nav_drawer :first-child {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 1rem;
+    gap: 1rem;
+    transition: all .3s;
+}
+
+.nav_drawer.is_open .btn_nav_drawer :first-child {
+    justify-content: flex-start;
+    padding-right: initial;
+}
+
+.nav_drawer.is_open .btn_nav_drawer :first-child :nth-child(2) {
+    display: block;
+}
+
+.nav_drawer .btn_nav_drawer.active {
+    background-color: var(--secondary-200);
+}
+
+.nav_drawer .btn_nav_drawer.active:hover {
+    background-color: var(--secondary-300);
+}
+
+.nav_drawer .nd_section {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.nav_drawer .nd_section:not(.no_divider)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    /* width: 100%; */
+    height: .2rem;
+    background-color: var(--primary-200);
+}
+
+.nav_drawer .nd_section .nd_s_actions {
+    display: flex;
+    flex-direction: column;
+    /* gap: .5rem; */
+}
+
+.nav_drawer .nd_s_title {
+    font-size: larger;
+}

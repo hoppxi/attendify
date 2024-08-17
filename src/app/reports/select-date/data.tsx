@@ -1,0 +1,60 @@
+
+type ReportByDateFormat = {
+    id: number;
+    date: string;
+    dateName?: string;
+    absents?: number
+}
+
+export const ReportByDate: Array<ReportByDateFormat> = [
+    { id: 1, date: "16/08/2024", dateName: "Today", absents: 10 },
+    { id: 2, date: "15/08/2024", dateName: "Yesterday", absents: 12 },
+    { id: 3, date: "14/08/2024", absents: 8 },
+    { id: 4, date: "13/08/2024", absents: 7 },
+    { id: 5, date: "12/08/2024", absents: 9 },
+    { id: 6, date: "11/08/2024", absents: 6 },
+    { id: 7, date: "10/08/2024", absents: 5 },
+    { id: 8, date: "09/08/2024", absents: 4 },
+    { id: 9, date: "08/08/2024", absents: 7 },
+    { id: 10, date: "07/08/2024", absents: 6 },
+    { id: 11, date: "06/08/2024", absents: 3 },
+    { id: 12, date: "05/08/2024", absents: 5 },
+    { id: 13, date: "04/08/2024", absents: 9 },
+    { id: 14, date: "03/08/2024", absents: 10 },
+    { id: 15, date: "02/08/2024", absents: 4 },
+    { id: 16, date: "01/08/2024", absents: 8 },
+    { id: 17, date: "31/07/2024", absents: 6 },
+    { id: 18, date: "30/07/2024", absents: 7 },
+    { id: 19, date: "29/07/2024", absents: 5 },
+    { id: 20, date: "28/07/2024", absents: 11 },
+    { id: 21, date: "27/07/2024", absents: 9 },
+    { id: 22, date: "26/07/2024", absents: 12 },
+    { id: 23, date: "25/07/2024", absents: 7 },
+    { id: 24, date: "24/07/2024", absents: 8 },
+    { id: 25, date: "23/07/2024", absents: 6 },
+    { id: 26, date: "22/07/2024", absents: 9 },
+    { id: 27, date: "21/07/2024", absents: 10 },
+    { id: 28, date: "20/07/2024", absents: 3 },
+    { id: 29, date: "19/07/2024", absents: 7 },
+    { id: 30, date: "18/07/2024", absents: 4 },
+    { id: 31, date: "17/07/2024", absents: 6 },
+    { id: 32, date: "16/07/2024", absents: 5 },
+    { id: 33, date: "15/07/2024", absents: 11 },
+    { id: 34, date: "14/07/2024", absents: 9 },
+    { id: 35, date: "13/07/2024", absents: 12 },
+    { id: 36, date: "12/07/2024", absents: 6 },
+    { id: 37, date: "11/07/2024", absents: 8 },
+    { id: 38, date: "10/07/2024", absents: 7 },
+    { id: 39, date: "09/07/2024", absents: 5 },
+    { id: 40, date: "08/07/2024", absents: 4 },
+    { id: 41, date: "07/07/2024", absents: 10 },
+    { id: 42, date: "06/07/2024", absents: 9 },
+    { id: 43, date: "05/07/2024", absents: 8 },
+    { id: 44, date: "04/07/2024", absents: 7 },
+    { id: 45, date: "03/07/2024", absents: 6 },
+    { id: 46, date: "02/07/2024", absents: 5 },
+    { id: 47, date: "01/07/2024", absents: 9 },
+    { id: 48, date: "30/06/2024", absents: 11 },
+    { id: 49, date: "29/06/2024", absents: 10 },
+    { id: 50, date: "28/06/2024", absents: 12 }
+];

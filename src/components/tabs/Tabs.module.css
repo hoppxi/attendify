@@ -1,0 +1,70 @@
+
+.tab_container {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    border-bottom: .14rem solid var(--secondary-200);
+    background-color: var(--primary-000);
+    width: 100%;
+    overflow: auto;
+}
+
+.btn_tab {
+    border-radius: 0;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.row .btn_tab {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.btn_tab:hover * {
+    font-weight: 500;
+}
+
+
+.btn_tab.active * {
+    color: var(--tint-700) !important;
+    font-weight: 500;
+}
+
+.btn_tab.active:hover * {
+    color: var(--tint-900) !important;
+    font-weight: 600;
+}
+
+.btn_tab.active::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 1.4rem;
+    right: 1.4rem;
+    height: .23rem;
+    border-radius: 1rem 1rem 0 0;
+    background-color: var(--tint-700);
+}
+
+.btn_tab.active:hover::after {
+    background-color: var(--tint-900);
+}
+
+.no_label .btn_tab :nth-child(2) {
+    display: none;
+}
+
+.no_label .btn_tab :first-child {
+    font-size: 1.5rem;
+}
+
+.no_icon .btn_tab :first-child {
+    display: none;
+}
+

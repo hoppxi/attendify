@@ -1,0 +1,7 @@
+.chart_container {
+    background-color: var(--secondary-100);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 2rem;
+    overflow-x: scroll;
+}

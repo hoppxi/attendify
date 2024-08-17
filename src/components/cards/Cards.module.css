@@ -1,0 +1,83 @@
+/* components/Card.module.css */
+.card {
+    padding: 2rem 1rem 2rem 1rem;
+    max-width: 30rem;
+    width: 100%;
+    min-height: 10rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+  
+.header {
+    margin-bottom: 12px;
+}
+  
+.heading {
+    font-size: 2rem;
+    font-weight: 900;
+}
+  
+.sub_heading {
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.details {
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.actions {
+    display: flex;
+    gap: .3rem;
+    margin-top: 1rem;
+}
+
+.actions_right {
+    justify-content: flex-end;
+}
+  
+.actions_column {
+    flex-direction: column;
+}
+  
+.actions_row {
+    flex-direction: row;
+}
+  
+.actions_fill_row {
+    flex-direction: row;
+    width: 100%;
+}
+  
+.actions_fill_column {
+    flex-direction: column;
+    height: 100%;
+}
+
+.actions_fill_column *,
+.actions_fill_row * {
+    width: 100%;
+}
+  
+.card_elevated {
+    box-shadow: 0 .5rem .625rem var(--box-shadow);
+}
+
+.card_filled {
+    background-color: var(--secondary-100);
+}
+
+.card_outlined {
+    border: .14rem solid var(--secondary-400);
+}
+
+.card_outlined_filled {
+    background-color: var(--secondary-100);
+    border: .14rem solid var(--secondary-400);
+}

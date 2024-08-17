@@ -1,0 +1,70 @@
+
+.chips_container {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+    padding: 1rem;
+}
+
+.chips_btn {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn_chips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+
+    padding: .4rem;
+    border: .14rem solid var(--secondary-200);
+    border-radius: .3rem;
+
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn_chips:hover {
+    background-color: var(--secondary-200);
+}
+
+
+.btn_chips_selected {
+    background-color: var(--secondary-100);
+}
+
+.btn_chips_selected::before {
+    content: 'check';
+    font-family: 'Material Symbols Outlined' !important;
+    scale: 1.7;
+}
+
+.btn_chips_selected:hover {
+    background-color: var(--secondary-300);
+}
+
+.chips_title {
+    font-size: larger;
+    display: flex;
+    gap: .3rem;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chips_title:first-child {
+    font-size: smaller !important;
+}
+
+.chips_title:last-child {
+    margin-left: 1rem;
+    padding-top: .6rem;
+}
+
+.chips_sections {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}

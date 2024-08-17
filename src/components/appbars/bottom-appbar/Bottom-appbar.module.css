@@ -1,0 +1,26 @@
+
+/* Bottom appabar styles */
+.bottom_appbar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    height: auto;
+    z-index: 10;
+    background-color: var(--secondary-100);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: .5rem;
+    padding-inline: 2rem;
+}
+
+.bottom_appbar .b_ab_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
