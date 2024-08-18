@@ -27,7 +27,7 @@
 .nav_drawer .btn_nav_drawer {
     width: 100%;
     padding: 1rem;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .nav_drawer .btn_nav_drawer :first-child :nth-child(2) {
@@ -37,7 +37,7 @@
 .nav_drawer .btn_nav_drawer :first-child {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding-right: 1rem;
     gap: 1rem;
     transition: all .3s;

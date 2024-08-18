@@ -33,11 +33,19 @@ export default function StudentProfile() {
 			<Container hasSearchbarAppbar navDrawerOpen={isNavDrawerOpen}>
 				<div className={style.profile_section}>
 					<div className={style.profile_info}>
-						<Image src={"/images/profile-pic/default-avatar-icon.png"} alt="" width="100" height="100" className={style.profile_pic} />
-						<div className={style.name_section}>
-							<div className={style.name_main}>Student Name</div>
-							<div className={style.name_prim}>@username</div>
-							<div className={style.name_seco}>Grade 10 - section C</div>
+						<div>
+							<Image src={"/images/profile-pic/default-avatar-icon.png"} alt="" width="100" height="100" className={style.profile_pic} />
+							<div className={style.name_section}>
+								<div className={style.name_main}>Student Name</div>
+								<div className={style.name_prim}>@username</div>
+								<div className={style.name_seco}>Grade 10 - section C</div>
+							</div>
+						</div>
+						<div className={style.qr_code_container}>
+							<Image src={"/images/test-qr-code.png"} alt="" width="100" height="100" className={style.qr_code}></Image>
+							<div className={style.ab_button}>
+								<Button variant="filled-tonal" icon="print"></Button>
+							</div>
 						</div>
 					</div>
 					<div className={style.action_buttons}>
@@ -46,11 +54,11 @@ export default function StudentProfile() {
 						<Button variant="filled-tonal" icon="delete" onClick={() => setDeleteDialog(true)} tooltip="Delete" />
 					</div>
 					<div className={style.description_section}>
-						<p>Student's info</p><br />
+						<p>Student&apos;s info</p><br />
 						<List>
 							<ListItem icon="today" heading="Absent" onClick={() => setReportFalseDialog(true)} supportingText="Today" />
-                            <ListItem icon="call" heading="0912131415 / 0912345678 / 0912141618" supportingText="Phone Number" />
-                            <ListItem icon="mail" heading="student@mailservice.com" supportingText="Email" />
+                            <ListItem icon="call" heading="0912131415 / 0912345678 / 0912141618" supportingText="Phone Number" href="tel:+251912131415" />
+                            <ListItem icon="mail" heading="student@mailservice.com" supportingText="Email" href="mailto:student@mailservice.com" />
                             <ListItem icon="celebration" heading="1999/22/11" supportingText="Birthday" />
                             <ListItem icon="family_restroom" heading="Father name" supportingText="Ftaher name" />
                             <ListItem icon="family_restroom" heading="Mother name" supportingText="Mother Name" />
@@ -87,7 +95,7 @@ export default function StudentProfile() {
 						</>
 					}
 				>
-					If the current report contains any errors or if a student's status needs updating, you can make the necessary changes here.
+					If the current report contains any errors or if a student&apos;s status needs updating, you can make the necessary changes here.
 				</Dialog>
 			</Container>
 		</>

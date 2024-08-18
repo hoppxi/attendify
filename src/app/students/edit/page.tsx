@@ -1,5 +1,6 @@
 'use client'
 import * as React from "react";
+import Image from "next/image";
 import styles from "./page.module.css";
 import CoreSearchbarAppbar from "@/widgets/UI/SearchbarAppbar";
 import useScreenSize from "@/hooks/useScreenSize";
@@ -43,6 +44,20 @@ export default function Edit() {
                     className={styles.form}
                     inputs={
                         <>
+                            <div className={styles.profile_info}>
+                                <div className={styles.profile_pic_container}>
+                                    <Image src={"/images/profile-pic/default-avatar-icon.png"} alt="" width="100" height="100" className={styles.profile_pic} />
+                                    <div className={styles.ab_button_pp}>
+                                        <Button variant="icon" icon="edit"></Button>
+                                    </div>
+                                </div>
+                                <div className={styles.qr_code_container}>
+                                    <Image src={"/images/test-qr-code.png"} alt="" width="100" height="100" className={styles.qr_code}></Image>
+                                    <div className={styles.ab_button_qr}>
+                                        <Button variant="filled-tonal" icon="print"></Button>
+                                    </div>
+                                </div>
+                            </div>
                             <div className={styles.field}>
                                 <span className={`material-symbols-outlined ${styles.field_icon}`}>person</span>
                                 <div className={styles.field_cont}>

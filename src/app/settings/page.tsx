@@ -24,8 +24,9 @@ export default function Settings() {
 					<List 
 						key={i}
 						heading={list.groupName}
-						children={
-							<>
+					>
+						
+						<>
 								{list.groupMembers.map((listItem, i) => {
 									return <ListItem 
 										key={i}
@@ -37,9 +38,8 @@ export default function Settings() {
 											`/settings/${listItem.setting.toLowerCase().replace(/ /g, "-")}`} 
 									/>
 								})}
-							</>
-						}
-					/>
+						</>
+					</List>
 				))}
 			</Container>
 		</>

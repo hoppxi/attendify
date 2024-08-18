@@ -22,7 +22,7 @@ export default function Home() {
 
 	return (
 	  	<>
-			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} /> : <CoreSearchbarAppbar />}
+			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} /> : <CoreSearchbarAppbar hideBackBtn />}
 			{isLargeScreen ? <CoreNavDrawer  isOpen={isNavDrawerOpen} active={1} /> : <CoreNavbar active={1} />}
 			<Container hasSearchbarAppbar navDrawerOpen={isNavDrawerOpen} hideContextBar>
 				<>

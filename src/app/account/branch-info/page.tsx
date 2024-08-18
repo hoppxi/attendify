@@ -12,13 +12,13 @@ import Image from "next/image";
 import Button from "@/components/buttons/Buttons";
 import Card from "@/components/cards/Cards";
 
-export default function Account() {
+export default function BranchProfile() {
 	const { isNavDrawerOpen, toggleNavDrawer } = useNavDrawer();
 	const isLargeScreen: boolean = useScreenSize(1024);
 
 	return (
 	  	<>
-			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Account" /> : <CoreSearchbarAppbar title="Account" />}
+			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Branch Profile" /> : <CoreSearchbarAppbar title="Branch Profile" />}
 			{isLargeScreen ? <CoreNavDrawer isOpen={isNavDrawerOpen} active={5} /> : <CoreNavbar active={5} />}
 			<Container hasSearchbarAppbar navDrawerOpen={isNavDrawerOpen}>
 				<div className={style.profile_section}>

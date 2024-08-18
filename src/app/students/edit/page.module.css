@@ -18,3 +18,51 @@
 .field_cont {
     width: 100%;
 }
+
+.profile_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+
+.qr_code {
+    border-radius: .5rem;
+    width: 11rem !important;
+    height: 11rem !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover;
+}
+
+.profile_pic {
+    width: 11rem !important;
+    height: 11rem !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all .5s;
+}
+
+
+
+.profile_pic_container, .qr_code_container{
+    position: relative;
+}
+
+.ab_button_pp {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--secondary-100);
+    border-radius: 50%;
+}
+
+.ab_button_qr {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translate(-50%);
+    /* top: 0; */
+}

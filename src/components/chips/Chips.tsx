@@ -28,7 +28,7 @@ const Chips: React.FC<ChipsProps> = ({chips}) => {
         <div className={style.chips_container}>
             {
                 chips.map((container, i) => (
-                    <div className={style.chips_sections}>
+                    <div key={i} className={style.chips_sections}>
                         <div className={style.chips_title}>
                             <span className="material-symbols-outlined">{container.title.icon}</span>
                             <span className={style.text}>{container.title.label}</span>
@@ -37,13 +37,15 @@ const Chips: React.FC<ChipsProps> = ({chips}) => {
                             {
                                 container.buttons.map((button, i) => (
                                     <Button 
+                                        key={i}
                                         variant="outlined" 
-                                        children={button.label} 
                                         onClick={button.onClick} 
                                         className={
                                             `${style.btn_chips} 
                                             ${button.selected && style.btn_chips_selected}`}
-                                    ></Button>
+                                    >
+                                        {button.label}
+                                    </Button>
                                 ))
                             }
                         </div>

@@ -3,9 +3,7 @@ import React from "react";
 import style from "../page.module.css";
 import Container from "@/components/containers/Containers";
 import Form from "@/components/forms/Forms";
-import TextField from "@/components/inputs/fields/Fields";
 import Button from "@/components/buttons/Buttons";
-import Link from "@/components/links/Links";
 import Logo from "@/components/logo/Logo";
 import { useNavDrawer } from "@/context/NavDrawerContext";
 
@@ -28,7 +26,7 @@ export default function Login() {
                             <>
                                 <div>The purpose of adding branches is to enable the inclusion of multiple branch admins in one form submission, allowing you to manage and register several admins at once. </div>
                                 <br />
-                                <div>Click 'Add Another Branch' to add details for a new admin. Click 'Finish' if you're done and want to submit the current entries.</div>
+                                <div>Click &apos;Add Another Branch&apos; to add details for a new admin. Click &apos;Finish&apos; if you&apos;re done and want to submit the current entries.</div>
                             </>
                         }
                         formAction={

@@ -1,5 +1,5 @@
 
-.container :last-child {
+.container :last-child:only-child:not(button) {
     display: flex;
     align-items: center;
     flex-direction: column;

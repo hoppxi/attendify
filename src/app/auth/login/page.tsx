@@ -46,7 +46,7 @@ export default function Login() {
                             <>
                                 <Link href="/login" padded>Forgot password?</Link>
                                 <Link href="/login" padded>Need help?</Link>
-                                <Link href="/login" padded>Don't have Account? Signup here.</Link>
+                                <Link href="/login" padded>Don&apos;t have Account? Signup here.</Link>
                             </>
                         }
                         formAction={

@@ -120,8 +120,7 @@ const Button: React.FC<ButtonProps> = ({variant="text", icon, children, segement
                                 ${style.btn_segement} 
                                 ${button.selected ? style.btn_segemented_selected : ""}
                                 ${className}
-                            `} 
-                            aria-selected={button.selected}
+                            `}
                             onMouseDown={createRipple}
                             onMouseUp={endRipple}
                             onMouseLeave={endRipple}

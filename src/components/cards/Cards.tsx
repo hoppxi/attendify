@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
         case 'fill-column':
             return style.actions_fill_column;
         default:
-            return '';
+            return style.actions_right;;
         }
     };
 

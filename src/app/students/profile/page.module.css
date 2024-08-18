@@ -19,6 +19,14 @@ img.profile_pic {
 
 .profile_info {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 1rem;
+    gap: 1rem;
+}
+
+.profile_info :first-child {
+    display: flex;
     gap: 1rem;
     align-items: center;
     transition: all .5s;
@@ -37,6 +45,26 @@ img.profile_pic {
     color: var(--text-300);
 }
 
+.qr_code_container {
+    position: relative;
+}
+
+.qr_code {
+    border-radius: .5rem;
+    width: 11rem !important;
+    height: 11rem !important;
+    aspect-ratio: 1/1 !important;
+    object-fit: cover;
+}
+
+.ab_button {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translate(-50%);
+    /* top: 0; */
+}
+
  .description_section {
     max-width: 40rem;
     padding: 1rem;
@@ -48,7 +76,7 @@ img.profile_pic {
  .action_buttons {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     padding-left: 1rem; 
     gap: .5rem;
     position: relative; 
@@ -66,7 +94,7 @@ img.profile_pic {
 
 .additional_info {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
 }
@@ -76,6 +104,11 @@ img.profile_pic {
         padding: .2rem;
     }
 
+    .profile_info {
+        padding-bottom: 2rem;
+    }
+
+    .profile_info :first-child,
     .profile_info {
         flex-direction: column;
     }

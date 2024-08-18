@@ -25,9 +25,8 @@ const TabButton: React.FC<TabButtonProps> = ({icon, label, active, ...props}) =>
                 ${style.btn_tab} 
                 ${active ? style.active : ""}
             `} 
-            icon={icon} 
-            children={label} 
-        />
+            icon={icon}
+        >{label}</Button>
     )
 }
 

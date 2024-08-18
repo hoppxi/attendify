@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 const useVisibility = (ref: React.RefObject<HTMLElement>) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
+    const currentRef = ref.current;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -11,13 +12,13 @@ const useVisibility = (ref: React.RefObject<HTMLElement>) => {
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, [ref]);

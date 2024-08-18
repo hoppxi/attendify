@@ -46,8 +46,8 @@ export default function StudentsList() {
                     </List>
                 </>
                 <ReactPaginate
-                    previousLabel={<span className="material-symbols-outlined" children="chevron_left" />}
-                    nextLabel={<span className="material-symbols-outlined" children="chevron_right" />}
+                    previousLabel={<span className="material-symbols-outlined">chevron_left</span>}
+                    nextLabel={<span className="material-symbols-outlined">chevron_right</span>}
                     pageCount={pageCount}
                     onPageChange={({selected}) => {
                         setPageNumber(selected);

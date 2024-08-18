@@ -20,7 +20,7 @@
 }
 
 .box {
-    flex: 1 1 calc(30% - 1rem);
+    flex: 1 1 calc(50% - 1rem);
     max-width: 100% !important;
 }
 
