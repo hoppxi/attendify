@@ -21,7 +21,7 @@ const useVisibility = (ref: React.RefObject<HTMLElement>) => {
                 observer.unobserve(currentRef);
             }
         };
-    }, [ref]);
+    }, [currentRef]);
 
     return isVisible;
 };
