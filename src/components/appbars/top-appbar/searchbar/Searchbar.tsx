@@ -77,7 +77,7 @@ const SearchbarAppbar: React.FC<SearchbarAppbarProps> = ({buttons, title, type="
             scrollContainerRef.current.removeEventListener('scroll', handleScroll);
           }
         };
-      }, [lastScrollY, "scroll-container"]);
+      }, [lastScrollY]);
 
     return(
         <div 

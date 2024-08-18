@@ -88,7 +88,7 @@ const Container:React.FC<ContainerProps> = ({
             scrollContainerRef.current.removeEventListener('scroll', handleScroll);
           }
         };
-      }, [lastScrollY, "scroll-container"]);
+      }, [lastScrollY]);
 
     return(
         <div 
