@@ -1,0 +1,22 @@
+
+.no_notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+.no_notifications_description {
+    text-align: center;
+}
+
+.no_notifications_description :first-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.no_notifications_description :last-child {
+    font-size: smaller;
+}
