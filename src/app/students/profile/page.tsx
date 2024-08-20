@@ -14,17 +14,53 @@ import Button from "@/components/buttons/Buttons";
 import List, { ListItem } from "@/components/lists/Lists";
 import Dialog from "@/components/dialogs/Dialogs";
 
-const ChartComponent = dynamic(() => import('./chart'), {ssr: false})
+const ChartComponent = dynamic(() => import('./chart'), {ssr: false});
+
+type dialogsProps = Array<
+	{isOpen: boolean; onClose: () => void; title: string; actions: React.ReactNode; children: React.ReactNode}
+>
 
 export default function StudentProfile() {
 	const { isNavDrawerOpen, toggleNavDrawer } = useNavDrawer();
 	const isLargeScreen: boolean = useScreenSize(1024);
+
+	// Dialogs
 	const [ isDeleteDialogOpen, setDeleteDialog ] = React.useState(false);
 	const [ isReportFalseDialogOpen, setReportFalseDialog ] = React.useState(false);
+	const [ isAddToPrintQuickOpen, setAddToPrintQuick ] = React.useState(false);
 
-	const handleDialogOpen = () => {
-		setDeleteDialog(true)
-	}
+	const dialogs: dialogsProps= [
+		{
+			isOpen: isDeleteDialogOpen, 
+			onClose: () => setDeleteDialog(false), 
+			title: "Delete Student", 
+			actions: <>
+				<Button variant="outlined" onClick={() => setDeleteDialog(false)}>Cancle</Button>
+				<Button variant="filled" href="/students/delete?uid=#1002">Continue</Button>
+			</>, 
+			children: <>Are you sure you want to permanently delete this student from the database? This action cannot be undone.</>
+		},
+		{
+			isOpen: isReportFalseDialogOpen, 
+			onClose: () => setReportFalseDialog(false), 
+			title: "False Report", 
+			actions: <>
+				<Button variant="outlined" onClick={() => setReportFalseDialog(false)}>Cancle</Button>
+				<Button variant="filled" href="/attendance/change-status">Change status</Button>
+			</>, 
+			children: <>If the current report contains any errors or if a student&apos;s status needs updating, you can make the necessary changes here.</>
+		},
+		{
+			isOpen: isAddToPrintQuickOpen, 
+			onClose: () => setAddToPrintQuick(false), 
+			title: "Add to print quick", 
+			actions: <>
+				<Button variant="outlined" onClick={() => setAddToPrintQuick(false)}>Cancle</Button>
+				<Button variant="filled" href="/attendance/change-status">Add</Button>
+			</>, 
+			children: <>If the current report contains any errors or if a student&apos;s status needs updating, you can make the necessary changes here.</>
+		}
+	]
 
 	return (
 	  	<>
@@ -44,7 +80,7 @@ export default function StudentProfile() {
 						<div className={style.qr_code_container}>
 							<Image src={"/images/test-qr-code.png"} alt="" width="100" height="100" className={style.qr_code}></Image>
 							<div className={style.ab_button}>
-								<Button variant="filled-tonal" icon="print"></Button>
+								<Button variant="filled-tonal" onClick={() => setAddToPrintQuick(true)} icon="print"></Button>
 							</div>
 						</div>
 					</div>
@@ -69,34 +105,18 @@ export default function StudentProfile() {
 						<ChartComponent />
 					</div>
 				</div>
-				<Dialog
-					isOpen={isDeleteDialogOpen}
-					onClose={() => setDeleteDialog(false)} 
-					type="basic"
-					title="Delete Student"
-					actions={
-						<>
-							<Button variant="outlined" onClick={() => setDeleteDialog(false)}>Cancle</Button>
-							<Button variant="filled" href="/students/delete?uid=#1002">Continue</Button>
-						</>
-					}
-				>
-					Are you sure you want to permanently delete this student from the database? This action cannot be undone.
-				</Dialog>
-				<Dialog
-					isOpen={isReportFalseDialogOpen}
-					onClose={() => setReportFalseDialog(false)} 
-					type="basic"
-					title="False Report"
-					actions={
-						<>
-							<Button variant="outlined" onClick={() => setReportFalseDialog(false)}>Cancle</Button>
-							<Button variant="filled" href="/attendance/change-status">Change status</Button>
-						</>
-					}
-				>
-					If the current report contains any errors or if a student&apos;s status needs updating, you can make the necessary changes here.
-				</Dialog>
+				{dialogs.map(({isOpen, onClose, title, actions, children}, i) => (
+					<Dialog
+						key={i}
+						type="basic"
+						title={title}
+						isOpen={isOpen}
+						onClose={onClose}
+						actions={actions}
+					>
+						{children}
+					</Dialog>
+				))}
 			</Container>
 		</>
 	);
