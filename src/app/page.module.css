@@ -1,0 +1,24 @@
+
+/* Not found page */
+
+.not_found {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+.not_found_description {
+    text-align: center;
+}
+
+.not_found_description :first-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.not_found_description :last-child {
+    font-size: smaller;
+}
