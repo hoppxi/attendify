@@ -19,7 +19,7 @@ export default function Notifications() {
 			{isLargeScreen && <CoreNavDrawer isOpen={isNavDrawerOpen} active={1} />}
 			<Container hasSearchbarAppbar navDrawerOpen={isNavDrawerOpen}>
                 <div className={styles.not_found}>
-                    <Image src={"/images/icons/done.svg"} alt="All Done" width={100} height={100} ></Image>
+                    <Image src={"/images/icons/error.png"} alt="All Done" width={100} height={100} ></Image>
                     <div className={styles.not_found_description}>
                         <div>404 - Not found error!!</div>
                         <div>The page you&apos;re looking for is not found; Try navigating back</div>
