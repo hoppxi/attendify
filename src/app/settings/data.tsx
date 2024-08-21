@@ -12,10 +12,10 @@ interface settingsAppDataFormat {
 export const settingsAppData: Array<settingsAppDataFormat> = [
     {
         "groupName": "User Settings",
-        "groupMembers": [
+        "groupMembers": [    
+            { "setting": "Account Settings", "description": "Manage your account settings", "icon": "settings", "href": "/settings/account" },
             { "setting": "Profile", "description": "Manage your profile settings", "icon": "account_circle" },
             { "setting": "Notification", "description": "Set your notification preferences", "icon": "notifications" },
-            { "setting": "Account Settings", "description": "Manage your account settings", "icon": "settings", "href": "/settings/account" }
         ]
     },
     {

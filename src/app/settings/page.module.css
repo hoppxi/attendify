@@ -1,0 +1,56 @@
+
+.ql_list {
+    padding: 1rem;
+}
+
+.action_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.action_btn button {
+    width: 13rem;
+}
+
+.action_btn button :first-child {
+    justify-content: center;
+}
+
+/* Account page */
+.account_section {
+    margin-top: 3rem;
+}
+
+.profile_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    height: 8rem;
+    margin-bottom: 1rem;
+}
+
+.profile_section :first-child {
+    position: absolute;
+    z-index: 100;
+    top: -40%;
+    background-color: var(--secondary-900);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.profile_section :nth-child(2) {
+    font-size: 1.5rem;
+}
+
+.profile_section :last-child {
+    color: var(--text-300);
+}
+
+/* Profile settings */
+.fs_dialog_input_label {
+    background-color: var(--secondary-100) !important;
+}

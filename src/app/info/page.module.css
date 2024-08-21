@@ -1,0 +1,34 @@
+
+.ql_list {
+    padding: 1rem;
+}
+
+.container {
+    padding: 1.3rem;
+    max-width: 50rem;
+    border-radius: 10px;
+    /* margin: 0 auto; */
+    margin-bottom: 1rem;
+}
+
+.header {
+    font-size: 2.3rem;
+    margin-bottom: 1.3rem;
+    color: var(--text-200);
+    font-weight: bold;
+}
+
+.subHeader {
+    font-size: 1.6rem;
+    margin-bottom: 1.1rem;
+    color: var(--text-300);
+    font-weight: 600;
+}
+
+.paragraph {
+    /* font-size: 1.2rem; */
+    line-height: 1.6;
+    color: var(--text-400);
+    margin-bottom: 15px;
+    /* text-align: justify; */
+}

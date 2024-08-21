@@ -17,7 +17,7 @@ export default function Settings() {
 
 	return (
 	  	<>
-			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Settings" /> : <CoreSearchbarAppbar title="Settings" />}
+			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Settings" /> : <CoreSearchbarAppbar hideSettingsBtn title="Settings" />}
 			{isLargeScreen && <CoreNavDrawer isOpen={isNavDrawerOpen} active={1} /> }
 			<Container hasSearchbarAppbar hasNavbar={false} navDrawerOpen={isNavDrawerOpen}>
 				{settingsAppData.map((list, i) => (
