@@ -35,9 +35,10 @@ interface ButtonProps {
     fullWidth?: boolean;
     href?: string;
     type?: "submit" | "reset" | "button" | undefined;
+    alignTooltip?: "right" | "left"
 }
 
-const Button: React.FC<ButtonProps> = ({variant="text", icon, children, segemented, disabled=false, onClick, href, tooltip, className, fullWidth, type, textClass}) => {
+const Button: React.FC<ButtonProps> = ({variant="text", icon, children, segemented, disabled=false, onClick, href, tooltip, className, fullWidth, type, textClass, alignTooltip}) => {
     const router = useRouter();
 
     const navigate = (href: string) => {
@@ -46,6 +47,34 @@ const Button: React.FC<ButtonProps> = ({variant="text", icon, children, segement
     
     const rippleRef = useRef<HTMLSpanElement | null>(null);
     const isHeldDown = useRef(false);
+
+    const [isTooltipVisible, setIsTooltipVisible] = React.useState(false);
+    const [isTouchScreen, setIsTouchScreen] = React.useState(false);
+    const holdTimer = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        const checkTouchScreen = () => {
+            setIsTouchScreen('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        };
+    
+        checkTouchScreen();
+    }, []);
+    
+    const handleTouchStart = () => {
+        holdTimer.current = setTimeout(() => {
+            setIsTooltipVisible(true);
+            navigator.vibrate && navigator.vibrate(50);
+        }, 600);
+    };
+    
+    const handleTouchEnd = () => {
+        if (holdTimer.current) {
+            clearTimeout(holdTimer.current);
+        }
+        setTimeout(() => {
+            setIsTooltipVisible(false);
+        }, 1000);
+    };
 
     const buttonStyleClass = 
         variant === "text" ? style.btn_text : 
@@ -134,7 +163,7 @@ const Button: React.FC<ButtonProps> = ({variant="text", icon, children, segement
     }
 
     return(
-        <div className={style.btn_container} style={{width: fullWidth ? "100%" : "unset"}}>
+        <div className={`${!isTouchScreen ? style.no_touchscreen : ""} ${style.btn_container}`} style={{width: fullWidth ? "100%" : "unset"}}>
             <button 
                 className={`${buttonStyleClass} ${className}`} 
                 disabled={disabled} 
@@ -144,13 +173,19 @@ const Button: React.FC<ButtonProps> = ({variant="text", icon, children, segement
                 }}
                 onMouseDown={createRipple}
                 onMouseUp={endRipple}
-                onMouseLeave={endRipple}
+                onMouseLeave={() => {
+                    () => endRipple();
+                    !isTouchScreen && setIsTooltipVisible(false);
+                }}
+                onMouseEnter={() => !isTouchScreen && setIsTooltipVisible(true)}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
                 type={type}
             >
                 {icon && <span className={`material-symbols-outlined ${style.icon}`}>{icon}</span>}
                 {children && <span className={`${textClass ? textClass : ""} ${style.text}`}>{children}</span>}
             </button>
-            {tooltip && <div className={style.btn_tooltip}>{tooltip}</div>}
+            {tooltip && <div className={`${isTooltipVisible ? style.show_tooltip : ""} ${style.btn_tooltip} ${alignTooltip ? (alignTooltip == "left" ? style.left : style.right) : ""}`}>{tooltip}</div>}
         </div>
     )
 }

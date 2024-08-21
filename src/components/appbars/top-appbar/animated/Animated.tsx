@@ -34,7 +34,7 @@ const AnimatedAppbar: React.FC<AnimatedAppbarProps> = ({title, icon, rightButton
             </div>
             <div className={style.t_ab_a_bar}>
                 <div className={style.t_ab_a_bar_left}>
-                    {!noBackBtn && <Button variant="icon" icon="arrow_back_ios_new" tooltip="Navigate Up" onClick={handleBackClick} />}
+                    {!noBackBtn && <Button variant="icon" icon="arrow_back_ios_new" tooltip="Navigate Up" alignTooltip="left" onClick={handleBackClick} />}
                     <span className={`${style.title_s} ${isTitlePVisible ? style.hidden : ''}`}>{title}</span>
                 </div>
                 <div className={style.t_ab_a_bar_right}>

@@ -21,7 +21,7 @@ const CoreAnimatedAppbar: React.FC<CoreAnimatedAppbarProps> = ({ noBackBtn, icon
                 <>
                     <Button variant="icon" icon="search" tooltip="Search" href="/search" />
                     <Button variant="icon" icon="settings" tooltip="Settings" href="/settings" />
-                    <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" />
+                    <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" alignTooltip="right" />
                 </>
             }
         />

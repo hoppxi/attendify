@@ -93,8 +93,8 @@ const SearchbarAppbar: React.FC<SearchbarAppbarProps> = ({buttons, title, type="
                 <div className={style.left_button}>
                     {
                         noBackBtn ? 
-                        <Button variant="icon" icon="search" href="/search" /> :
-                        <Button variant="icon" icon="arrow_back_ios_new" tooltip="Navigate Up" onClick={handleBackClick} />
+                        <Button variant="icon" icon="search" href="/search" tooltip="Search" alignTooltip="left" /> :
+                        <Button variant="icon" icon="arrow_back_ios_new" tooltip="Navigate Up" alignTooltip="left" onClick={handleBackClick} />
                     }
                 </div>
                 <Button variant="text" className={style.searchbar_trigger} href="/search" fullWidth>

@@ -18,7 +18,7 @@ const CoreSearchbarAppbar: React.FC<CoreSearchbarAppbarProps> = ({title, hideBac
             buttons={
                 <>
                     {!hideSettingsBtn && <Button variant="icon" icon="settings" tooltip="Settings" href="/settings" />}
-                    {!hideNotificationsBtn && <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" />}
+                    {!hideNotificationsBtn && <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" alignTooltip="right" />}
                 </>
             }
             title={title ? title : <Logo />}

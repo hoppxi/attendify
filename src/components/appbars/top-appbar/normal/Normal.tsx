@@ -36,7 +36,7 @@ const NormalAppbar: React.FC<NormalAppbarProps> = ({ backBtn, navdrawerOpener, s
                         <span className={style.title}>{title}</span>
                     </> :
                     <>
-                        {backBtn && <Button variant="icon" icon="arrow_back_ios_new" tooltip="Navigate Up" onClick={handleBackClick} />}
+                        {backBtn && <Button variant="icon" icon="arrow_back_ios_new" tooltip="Navigate Up" alignTooltip="left" onClick={handleBackClick} />}
                         <span className={style.title}>{title}</span>
                     </>
                }

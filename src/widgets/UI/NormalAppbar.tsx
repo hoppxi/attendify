@@ -35,7 +35,7 @@ const CoreNormalAppbar: React.FC<CoreNormalAppbarProps> = ({ backBtn, navdrawerO
             rightButtons={
                 <>
                     <Button variant="icon" icon="settings" tooltip="Settings" href="/settings" />
-                    <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" />
+                    <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" alignTooltip="right" />
                 </>
             }
         />

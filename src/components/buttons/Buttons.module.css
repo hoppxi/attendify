@@ -202,8 +202,8 @@
     bottom: -35px; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333; 
-    color: #fff; 
+    background-color: var(--secondary-700); 
+    color: var(--text-900); 
     padding: 8px; 
     border-radius: 4px; 
     font-size: 12px; 
@@ -214,11 +214,24 @@
     z-index: 1000; 
 }
 
-.btn_container:hover .btn_tooltip {
+.btn_tooltip.right {
+    transform: translateX(-70%);
+}
+
+.btn_tooltip.left {
+    transform: translateX(-30%);
+}
+
+.btn_container.no_touchscreen:hover .btn_tooltip {
     opacity: 1; 
     visibility: visible;
 }
   
+.btn_tooltip.show_tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
 .btn_container button {
     position: relative;
     z-index: 1; 
