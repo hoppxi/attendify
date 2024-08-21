@@ -51,11 +51,11 @@ export default function Home() {
 						<ListItem icon="edit" heading="Company Profile" supportingText="Admin just updated Company profile"></ListItem>
 					</List>
 					<List heading="Quick Links">
-						<ListItem icon="help" heading="Help and support" supportingText="Explore what to find from Attendify"></ListItem>
-						<ListItem icon="feedback" heading="Feedback" supportingText="Tell us what to update and change"></ListItem>
-						<ListItem icon="info" heading="About us" supportingText="Who is Attendify"></ListItem>
-						<ListItem icon="gavel" heading="Terms and Conditions"></ListItem>
-						<ListItem icon="shield" heading="Privacy Policy"></ListItem>
+						<ListItem icon="help" heading="Help and support" supportingText="Explore what to find from Attendify" href="/info/support/help"></ListItem>
+						<ListItem icon="feedback" heading="Feedback" supportingText="Tell us what to update and change" href="/info/support/feedback"></ListItem>
+						<ListItem icon="info" heading="About us" supportingText="Who is Attendify" href="/info/about"></ListItem>
+						<ListItem icon="gavel" heading="Terms and Conditions" href="/info/legal/terms"></ListItem>
+						<ListItem icon="shield" heading="Privacy Policy" href="/info/legal/policy"></ListItem>
 					</List>
 				</>
 			</Container>
