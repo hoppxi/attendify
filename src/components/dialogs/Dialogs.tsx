@@ -11,7 +11,9 @@ type DialogProps = {
     actions?: React.ReactNode;
     children: React.ReactNode;
     actionsAlignment?: 'right' | 'column' | 'row' | 'fill-row' | 'fill-column';
-    closeOnOverlayClick?: boolean
+    closeOnOverlayClick?: boolean;
+    overlayClassName?: string;
+    dialogClassName?: string;
 };
 
 const Dialog: React.FC<DialogProps> = ({
@@ -23,7 +25,9 @@ const Dialog: React.FC<DialogProps> = ({
     actions,
     children,
     actionsAlignment = 'right',
-    closeOnOverlayClick = true
+    closeOnOverlayClick = true,
+    overlayClassName,
+    dialogClassName
 }) => {
 
     const handleOverlayClick = (e: React.MouseEvent) => {
@@ -54,8 +58,8 @@ const Dialog: React.FC<DialogProps> = ({
     };
 
     return (
-        <div className={style.overlay} onClick={handleOverlayClick}>
-            <div className={`${style.dialog} ${isFullScreen ? style.full_screen : ''}`}>
+        <div className={`${overlayClassName ? overlayClassName : ""} ${style.overlay}`} onClick={handleOverlayClick}>
+            <div className={`${style.dialog} ${isFullScreen ? style.full_screen : ''} ${dialogClassName ? dialogClassName : ""}`}>
                 <div className={`${style.dialog_header} ${isFullScreen ? style.full_screen_header : ''}`}>
                     {isFullScreen ? (
                         <>

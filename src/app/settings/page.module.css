@@ -18,6 +18,21 @@
     justify-content: center;
 }
 
+/* Overlay and dialog */
+.overlay_fs_dialog {
+    align-items: flex-end !important;
+}
+
+.fs_dialog_short {
+    height: 50% !important;
+    border-radius: 2rem 2rem 0 0 !important;
+    background-color: var(--primary-200) !important;
+}
+
+.fs_dialog_short .fs_dialog_input_label {
+    background-color: var(--primary-200) !important;
+}
+
 /* Account page */
 .account_section {
     margin-top: 3rem;
