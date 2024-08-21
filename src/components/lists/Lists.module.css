@@ -71,3 +71,7 @@
     padding: 0rem;
     justify-content: space-between;
 }
+
+.supporting_text {
+    text-align: start;
+}

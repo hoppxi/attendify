@@ -12,7 +12,8 @@ interface InputProps {
 	helperText?: string;
 	disabled?: boolean;
 	name?: string;
-	required?: boolean
+	required?: boolean;
+	labelClassName?: string
 }
 
 const TextField: React.FC<InputProps> = ({
@@ -25,7 +26,8 @@ const TextField: React.FC<InputProps> = ({
     helperText,
     disabled = false,
     name,
-    required
+    required,
+	labelClassName
 }) => {
     const [isFocused, setIsFocused] = useState(false);
 
@@ -46,9 +48,9 @@ const TextField: React.FC<InputProps> = ({
 					placeholder={isFocused ? placeholder : " "}
 					disabled={disabled}
 					name={name}
-          required={required}
+          			required={required}
 				/>
-        <label className={styles.label}>{label}</label>
+        <label className={`${labelClassName ? labelClassName : ""} ${styles.label}`}>{label}</label>
 			</div>
 			{helperText && !error && <div className={styles.helper_text}>{helperText}</div>}
 			{error && <div className={styles.error_text}>{error}</div>}

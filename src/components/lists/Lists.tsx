@@ -15,7 +15,9 @@ interface ListItemConfig {
 
 interface ListConfig {
     heading?: string,
-    children?: React.ReactNode
+    children?: React.ReactNode;
+    className?: string;
+    sectionClassName?: string;
 }
 
 const ListItem: React.FC<ListItemConfig> = ({onClick, icon, listNum, heading, supportingText, info, href}) => {
@@ -33,11 +35,11 @@ const ListItem: React.FC<ListItemConfig> = ({onClick, icon, listNum, heading, su
     )
 }
 
-const List: React.FC<ListConfig> = ({heading, children}) => {
+const List: React.FC<ListConfig> = ({heading, children, sectionClassName, className}) => {
     return(
-        <div className={style.list}>
+        <div className={`${className ? className : ""} ${style.list}`}>
             <div className={style.list_heading}>{heading}</div>
-            <div className={style.list_section}>
+            <div className={`${sectionClassName ? sectionClassName : ""} ${style.list_section}`}>
                 {children}
             </div>
         </div>
