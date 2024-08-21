@@ -15,7 +15,12 @@ const SearchbarAppbar: React.FC<SearchbarAppbarProps> = ({buttons, title, type="
     const router = useRouter();
 
     const handleBackClick = () => {
-      router.back();
+        if (window.history.length <= 1) {
+            // Redirect to the home if there's no history
+            router.push("/"); 
+        } else {
+            router.back();
+        }
     };
     const [placeholder, setPlaceholder] = useState(`Search...`);
     const [zommOut, setZoomOut] = useState(false);
@@ -27,57 +32,57 @@ const SearchbarAppbar: React.FC<SearchbarAppbarProps> = ({buttons, title, type="
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          if (title && title !== 'search...') {
-            setZoomOut(true);
-    
-            setTimeout(() => {
-              setPlaceholder(title as string);
-              setZoomOut(false);
-            }, 300);
-          }
+            if (title && title !== 'search...') {
+                setZoomOut(true);
+        
+                setTimeout(() => {
+                    setPlaceholder(title as string);
+                    setZoomOut(false);
+                }, 300);
+            }
         }, 1000);
     
         return () => clearTimeout(timer);
-      }, [title]);
+    }, [title]);
   
     useEffect(() => {
         scrollContainerRef.current = document.getElementById("scroll-container");
     
         const handleScroll = () => {
-          if (scrollContainerRef.current) {
-            const currentScrollY = scrollContainerRef.current.scrollTop;
-            const currentTime = Date.now();
-            const timeDiff = currentTime - lastTimeRef.current;
-    
-            const scrollDiff = Math.abs(currentScrollY - lastScrollY);
-            const speed = scrollDiff / timeDiff; 
+            if (scrollContainerRef.current) {
+                const currentScrollY = scrollContainerRef.current.scrollTop;
+                const currentTime = Date.now();
+                const timeDiff = currentTime - lastTimeRef.current;
+        
+                const scrollDiff = Math.abs(currentScrollY - lastScrollY);
+                const speed = scrollDiff / timeDiff; 
 
-            const duration = Math.min(.5, 1 / (speed + 0.1));
-            setTransitionDuration(`${duration}s`);
-    
-            if (currentScrollY > lastScrollY) {
-                // Scrolling up
-                setShow(false);
-            } else {
-              // Scrolling down
-              setShow(true);
+                const duration = Math.min(.5, 1 / (speed + 0.1));
+                setTransitionDuration(`${duration}s`);
+        
+                if (currentScrollY > lastScrollY) {
+                    // Scrolling up
+                    setShow(false);
+                } else {
+                // Scrolling down
+                setShow(true);
+                }
+        
+                setLastScrollY(currentScrollY);
+                lastTimeRef.current = currentTime;
             }
-    
-            setLastScrollY(currentScrollY);
-            lastTimeRef.current = currentTime;
-          }
         };
     
         if (scrollContainerRef.current) {
-          scrollContainerRef.current.addEventListener('scroll', handleScroll);
+            scrollContainerRef.current.addEventListener('scroll', handleScroll);
         }
     
         return () => {
-          if (scrollContainerRef.current) {
-            scrollContainerRef.current.removeEventListener('scroll', handleScroll);
-          }
+            if (scrollContainerRef.current) {
+                scrollContainerRef.current.removeEventListener('scroll', handleScroll);
+            }
         };
-      }, [lastScrollY]);
+    }, [lastScrollY]);
 
     return(
         <div 

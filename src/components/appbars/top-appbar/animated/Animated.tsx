@@ -18,7 +18,12 @@ const AnimatedAppbar: React.FC<AnimatedAppbarProps> = ({title, icon, rightButton
     const isTitlePVisible = useVisibility(titlePRef);
 
     const handleBackClick = () => {
-      router.back();
+        if (window.history.length <= 1) {
+            // Redirect to the home if there's no history
+            router.push("/"); 
+        } else {
+            router.back();
+        }
     };
 
     return(

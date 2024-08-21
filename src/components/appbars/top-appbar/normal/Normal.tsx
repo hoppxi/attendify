@@ -19,7 +19,12 @@ const NormalAppbar: React.FC<NormalAppbarProps> = ({ backBtn, navdrawerOpener, s
     const router = useRouter();
 
     const handleBackClick = () => {
-      router.back();
+        if (window.history.length <= 1) {
+            // Redirect to the home if there's no history
+            router.push("/"); 
+        } else {
+            router.back();
+        }
     };
 
     return(
