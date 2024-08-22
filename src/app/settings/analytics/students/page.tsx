@@ -1,6 +1,6 @@
 'use client'
 import * as React from "react";
-import styles from "../page.module.css";
+import styles from "../../page.module.css";
 import CoreSearchbarAppbar from "@/widgets/UI/SearchbarAppbar";
 import useScreenSize from "@/hooks/useScreenSize";
 import CoreNormalAppbar from "@/widgets/UI/NormalAppbar";

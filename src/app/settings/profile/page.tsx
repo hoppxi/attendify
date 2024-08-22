@@ -36,8 +36,8 @@ const DialogForm: React.FC<DialogFormProps> = memo(({ isOpen, onClose, title, in
 			inputs={inputs}
 			formAction={
 				<>
-					<Button variant="outlined" type="button" onClick={onClose}>Cancel</Button>
-					<Button variant="filled" type="submit">Save</Button>
+					<Button variant="outlined" type="button" onClick={onClose} textClass={styles.btn_text_center} fullWidth>Cancel</Button>
+					<Button variant="filled" type="submit" textClass={styles.btn_text_center} fullWidth>Save</Button>
 				</>
 			}
 		/>

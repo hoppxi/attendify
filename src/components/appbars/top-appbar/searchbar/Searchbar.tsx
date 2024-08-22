@@ -29,6 +29,13 @@ const SearchbarAppbar: React.FC<SearchbarAppbarProps> = ({buttons, title, type="
     const [lastScrollY, setLastScrollY] = useState(0);
     const scrollContainerRef = useRef<HTMLElement | null>(null);
     const lastTimeRef = useRef(Date.now());
+    const [hasImage, setHasImage] = useState(false);
+
+    useEffect(() => {
+        const searchbar = document.querySelector(`.${style.searchbar}`);
+        const imageExists: boolean = searchbar ? searchbar.querySelector('img') !== null : false;
+        setHasImage(imageExists);
+    }, [placeholder]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -98,7 +105,7 @@ const SearchbarAppbar: React.FC<SearchbarAppbarProps> = ({buttons, title, type="
                     }
                 </div>
                 <Button variant="text" className={style.searchbar_trigger} href="/search" fullWidth>
-                    <span className={style.searchbar}>
+                    <span className={`${style.searchbar} ${hasImage ? style.no_padding : ''}`}>
                         <span className={`${zommOut ? style.zoomOut : style.zoomIn} ${style.placeholder}`}>{placeholder}</span>
                     </span>
                 </Button>

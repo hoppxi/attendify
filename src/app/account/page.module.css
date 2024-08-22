@@ -42,7 +42,7 @@ img.profile_pic {
     padding: 1rem;
     width: 100%;
     border-radius: 1rem;
-    background-color: var(--primary-100);
+    background-color: var(--secondary-100);
 }
 
  .action_buttons {

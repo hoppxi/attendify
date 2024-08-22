@@ -54,7 +54,7 @@
 
 .container.has_searchbar_appbar:not(.large_screen) {
     height: 100svh;
-    padding-top: 7rem;
+    padding-top: 6rem;
 }
 
 .container.has_searchbar_appbar.has_navbar:not(.large_screen) {

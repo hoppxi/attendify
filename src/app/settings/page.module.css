@@ -24,13 +24,17 @@
 }
 
 .fs_dialog_short {
-    height: 50% !important;
+    height: fit-content !important;
     border-radius: 2rem 2rem 0 0 !important;
-    background-color: var(--primary-200) !important;
+    background-color: var(--secondary-100) !important;
 }
 
 .fs_dialog_short .fs_dialog_input_label {
-    background-color: var(--primary-200) !important;
+    background-color: var(--secondary-100) !important;
+}
+
+.btn_text_center {
+    justify-content: center;
 }
 
 /* Account page */

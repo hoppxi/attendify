@@ -202,7 +202,7 @@
     bottom: -35px; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--secondary-700); 
+    background-color: var(--text-100); 
     color: var(--text-900); 
     padding: 8px; 
     border-radius: 4px; 

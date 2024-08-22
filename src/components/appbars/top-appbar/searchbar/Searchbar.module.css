@@ -29,6 +29,11 @@
     padding-left: 2rem;
 }
 
+.no_padding {
+    padding: 0 !important;
+    padding-left: 2rem  !important;
+}
+
 .searchbar :last-child {
     font-size: 1.4rem;
     user-select: none;
@@ -91,3 +96,7 @@
     opacity: 0;
     transform: scale(.8);
 }
+
+/* .placeholder {
+    padding: 0 0 0 2rem !important;
+} */
