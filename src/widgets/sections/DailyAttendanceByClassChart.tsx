@@ -2,8 +2,8 @@ import React from 'react';
 import { Chart } from 'react-google-charts';
 import style from "./charts.module.css";
 
-const DailyAttendanceByClassChart = () => {
-    const data = [
+const DailyAttendanceByClassChart: React.FC<{data?: Array<Array<string | number>>}> = ({data}) => {
+    const defaultData = [
         ['Grade', 'Present', 'Absent', 'Late'],
         ['Grade 9', 30, 5, 2],
         ['Grade 10', 28, 7, 3],
@@ -51,7 +51,7 @@ const DailyAttendanceByClassChart = () => {
                 chartType="BarChart"
                 width="100%"
                 height="400px"
-                data={data}
+                data={data ? data : defaultData}
                 options={options}
             />
         </div>

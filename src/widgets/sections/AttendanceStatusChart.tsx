@@ -2,8 +2,8 @@ import React from 'react';
 import { Chart } from 'react-google-charts';
 import style from "./charts.module.css";
 
-const AttendanceStatusChart = () => {
-    const data = [
+const AttendanceStatusChart: React.FC<{data?: Array<Array<string | number>>}> = ({data}) => {
+    const defaultData = [
         ['Attendance Status', 'Number of Students'],
         ['Present', 80],
         ['Absent', 15],
@@ -29,7 +29,7 @@ const AttendanceStatusChart = () => {
                 chartType="PieChart"
                 width="100%"
                 height="400px"
-                data={data}
+                data={data ? data : defaultData}
                 options={options}
             />
         </div>
