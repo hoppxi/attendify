@@ -21,29 +21,27 @@ export const settingsAppData: Array<settingsAppDataFormat> = [
     {
         "groupName": "System Configuration",
         "groupMembers": [
-            { "setting": "Attendance Rules", "description": "Upload and manage your videos", "icon": "video_call" },
-            { "setting": "QR Code Settings", "description": "Write and publish articles", "icon": "article", "href": "/settings/qr-code"},
+            { "setting": "Attendance Rules", "description": "Update how attendance is managed", "icon": "video_call" },
+            { "setting": "QR Code Settings", "description": "Set QR code settings", "icon": "article", "href": "/settings/qr-code"},
         ]
     },
     {
         "groupName": "Search and Discovery Settings",
         "groupMembers": [
-            { "setting": "Search Filters", "description": "Customize your search filters", "icon": "filter_list" },
-            { "setting": "Query and Graphs", "description": "Manage your content discovery preferences", "icon": "explore", "href": "/settings/query"},
+            { "setting": "Search", "description": "Customize your search settings", "icon": "filter_list" },
         ]
     },
     {
         "groupName": "Analytics Settings",
         "groupMembers": [
-            { "setting": "Students Analytics", "description": "View your user engagement stats", "icon": "insights", "href": "/settings/analytics/students" },
-            { "setting": "Branches Analytics", "description": "View analytics for your content", "icon": "bar_chart", "href": "/settings/analytics/branches" },
-            { "setting": "Performance Metrics", "description": "Track performance over time", "icon": "trending_up", "href": "/settings/analytics/company" },
+            { "setting": "Students Analytics", "description": "View your students stats (Current Branch)", "icon": "insights", "href": "/settings/analytics/students" },
+            { "setting": "Branches Analytics", "description": "View analytics for all branches (Limited access)", "icon": "bar_chart", "href": "/settings/analytics/branches" },
+            { "setting": "Company Metrics", "description": "Track performance and analytics of your company", "icon": "trending_up", "href": "/settings/analytics/company" },
         ]
     },
     {
         "groupName": "Customization Settings",
         "groupMembers": [
-            { "setting": "Theme Settings", "description": "Customize the app theme", "icon": "palette", "href": "/settings/theme" },
             { "setting": "Interface Settings", "description": "Set your interface color and other preferences", "icon": "view_quilt", "href": "/settings/interface" }
         ]
     },
