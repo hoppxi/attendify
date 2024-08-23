@@ -29,7 +29,7 @@ const DialogForm: React.FC<DialogFormProps> = memo(({ isOpen, onClose, title, in
 		type="full-screen"
 		title={title}
 		overlayClassName={!useScreenSize(1024) ? styles.overlay_fs_dialog : ""}
-		dialogClassName={!useScreenSize(1024) ? styles.fs_dialog_short : ""}
+		dialogClassName={!useScreenSize(1024) ? styles.fs_dialog_short : styles.fs_dialog_ls_cont}
 		actionsAlignment="fill-row"
 	>
 		<Form

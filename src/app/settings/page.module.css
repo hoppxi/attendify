@@ -5,8 +5,10 @@
 
 .action_btn {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: .6rem;
     width: 100%;
 }
 
@@ -31,6 +33,14 @@
 
 .fs_dialog_short .fs_dialog_input_label {
     background-color: var(--secondary-100) !important;
+}
+
+.fs_dialog_ls_cont {
+    max-width: 35rem !important;
+    width: 100% !important;
+    max-height: 30rem !important;
+    height: fit-content !important;
+    border-radius: 1rem !important;
 }
 
 .btn_text_center {
@@ -72,4 +82,46 @@
 /* Profile settings */
 .fs_dialog_input_label {
     background-color: var(--secondary-100) !important;
+}
+
+/* error */
+.error {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 10rem; */
+}
+
+.error_description {
+    text-align: center;
+}
+
+.error_description :first-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.error_description :last-child {
+    font-size: smaller;
+}
+
+/* Info */
+.ql_container {
+    padding: 1.3rem;
+    max-width: 50rem;
+    border-radius: 10px;
+}
+
+.ql_header {
+    font-size: 1.1rem;
+    color: var(--text-200);
+    font-weight: bold;
+}
+
+.ql_paragraph {
+    line-height: 1.6;
+    color: var(--text-400);
+    margin-bottom: 15px;
 }

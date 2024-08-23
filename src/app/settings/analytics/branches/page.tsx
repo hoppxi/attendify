@@ -20,6 +20,14 @@ export default function BranchesAnalyticsSettings() {
 			{isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Branches Analytics" /> : <CoreSearchbarAppbar hideSettingsBtn title="Branches Analytics" />}
 			{isLargeScreen && <CoreNavDrawer isOpen={isNavDrawerOpen} active={1} /> }
 			<Container hasSearchbarAppbar hasNavbar={false} navDrawerOpen={isNavDrawerOpen}>
+				<List heading="Branches' data">
+					<ListItem icon="groups" heading="Branches" supportingText="6" />
+					<ListItem icon="groups" heading="Total Registered students" supportingText="3209" />
+				</List>
+				<section className={styles.ql_container}>
+					<h1 className={styles.ql_header}>Info</h1>
+					<p className={styles.ql_paragraph}>For more information you need to log in to the branch you want to see.</p>
+				</section>
                 <List heading="Looking for something?" sectionClassName={styles.ql_list} >
 					<Link padded href="/settings/account">Account Settings</Link>
 					<Link padded href="/settings/account">Privacy Policy</Link>
