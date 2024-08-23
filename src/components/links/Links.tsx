@@ -35,12 +35,7 @@ const Link: FC<LinkProps> = ({ children, type, padded, className, ...props }) =>
     return (
         <NextLink 
             {...props} 
-            className={`
-                ${style.link} 
-                ${className && className} 
-                ${getLinkTypeStyle()}
-                ${padded && style.padded}
-            `}
+            className={`${style.link} ${className ? className : ""} ${getLinkTypeStyle()}${padded ? style.padded : ""}`}
         >
             {children}
         </NextLink>

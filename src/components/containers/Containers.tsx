@@ -92,18 +92,7 @@ const Container:React.FC<ContainerProps> = ({
 
     return(
         <div 
-            className={`
-                ${style.container} 
-                ${hasNavbar ? style.has_navbar : ""} 
-                ${hasTab ? style.has_tab : ""} 
-                ${hasNavDrawer ? style.has_nav_drawer : ""} 
-                ${hasTopAppbar ? style.has_top_appbar : ""} 
-                ${hasSmallScreenTopAppbar ? style.has_small_screen_top_appbar : ""} 
-                ${hasSearchbarAppbar ? style.has_searchbar_appbar : ""} 
-                ${isLargeScreen ? style.large_screen : ""} 
-                ${isLargeScreen && navDrawerOpen ? style.nav_drawer_open : ""} 
-                ${className ? className : ""}
-            `}
+            className={`${style.container} ${hasNavbar ? style.has_navbar : ""} ${hasTab ? style.has_tab : ""} ${hasNavDrawer ? style.has_nav_drawer : ""} ${hasTopAppbar ? style.has_top_appbar : ""} ${hasSmallScreenTopAppbar ? style.has_small_screen_top_appbar : ""} ${hasSearchbarAppbar ? style.has_searchbar_appbar : ""} ${isLargeScreen ? style.large_screen : ""} ${isLargeScreen && navDrawerOpen ? style.nav_drawer_open : ""} ${className ? className : ""}`}
             id="scroll-container"
         >
             {isLargeScreen && !hideContextBar && <div className={`${show ? style.show : style.hide} ${animateContextBar ? style.animate_context_bar : ""} ${style.context_bar}`} style={{ transitionDuration }}>

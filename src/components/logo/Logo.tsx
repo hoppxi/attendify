@@ -1,45 +1,46 @@
-
 import React from "react";
 import style from "./Logo.module.css";
 import Image from "next/image";
 
 interface LogoProps {
     type?: "small" | "large" | "medium";
-    className?: string
+    className?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({type, className}) => {
-    const [isDarkMode, setIsDarkMode] = React.useState(false);
+const Logo: React.FC<LogoProps> = ({ type, className }) => {
+    const [isDarkMode, setIsDarkMode] = React.useState<boolean>(false);
 
     React.useEffect(() => {
-      const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
-      setIsDarkMode(matchMedia.matches);
-  
-      const handleChange = (e: MediaQueryListEvent) => {
-        setIsDarkMode(e.matches);
-      };
-  
-      matchMedia.addEventListener('change', handleChange);
-      return () => matchMedia.removeEventListener('change', handleChange);
+        const updateDarkMode = () => {
+            const isDark = document.documentElement.classList.contains('dark-mode');
+            const isLight = document.documentElement.classList.contains('light-mode');
+            setIsDarkMode(isDark ? isDark : !isLight);
+        };
+
+        updateDarkMode();
+        const handleClassChange = () => updateDarkMode();
+
+        const observer = new MutationObserver(handleClassChange);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+        return () => {
+            observer.disconnect();
+        };
     }, []);
 
     const logoStyle: string = `
-        ${
-            type === "small" ? 
-            style.logo_small 
-            : type === "medium" ?
-            style.logo_medium
-            : type === "large" ?
-            style.logo_large
-            : style.logo_medium
-        } ${className ? className : ""}
+        ${type === "small" ? style.logo_small
+        : type === "medium" ? style.logo_medium
+        : type === "large" ? style.logo_large
+        : style.logo_medium} ${className ? className : ""}
     `;
-    return(
+
+    return (
         <Image
             src={
                 isDarkMode
-                ? '/images/logo/default-monochrome-white.svg'
-                : '/images/logo/default-monochrome.svg'
+                    ? '/images/logo/default-monochrome-white.svg'
+                    : '/images/logo/default-monochrome.svg'
             }
             alt="Attendify"
             className={logoStyle}
@@ -47,7 +48,7 @@ const Logo: React.FC<LogoProps> = ({type, className}) => {
             height={30}
             draggable={false}
         />
-    )
+    );
 }
 
 export default Logo;

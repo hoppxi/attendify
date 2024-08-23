@@ -3,8 +3,8 @@ import styles from './Toggle-inputs.module.css';
 
 interface ToggleInputProps {
     type: "checkbox" | "radio";
-    checked: boolean;
-    onChange: (checked: boolean) => void;
+    checked?: boolean;
+    onChange?: (checked: boolean) => void;
     label?: string;
     disabled?: boolean;
     color?: 'primary' | 'secondary';
@@ -17,7 +17,7 @@ const ToggleInput: React.FC<ToggleInputProps> = ({ name, type, checked, onChange
             <input
                 type={type}
                 checked={checked}
-                onChange={(e) => onChange(type === 'checkbox' ? e.target.checked : true)}
+                onChange={(e) => onChange && onChange(type === 'checkbox' ? e.target.checked : true)}
                 disabled={disabled}
                 className={styles.input}
                 name={name}
