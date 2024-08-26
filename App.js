@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { SafeAreaView, StyleSheet, StatusBar, BackHandler, Platform } from 'react-native';
 import { WebView } from 'react-native-webview';
 import * as NavigationBar from 'expo-navigation-bar';
 import Constants from 'expo-constants';
@@ -8,6 +8,7 @@ const serverUrl = Constants.expoConfig.extra.SERVER;
 
 const App = () => {
     const [theme, setTheme] = useState('light'); // Default theme is light
+    const webViewRef = useRef(null);
 
     const handleWebViewMessage = (event) => {
         const { data } = event.nativeEvent;
@@ -18,21 +19,42 @@ const App = () => {
         }
     };
 
+    const handleBackButton = () => {
+        if (webViewRef.current) {
+            webViewRef.current.goBack(); // Go back in WebView history
+            return true; // Prevent the default back action (closing the app)
+        }
+        return false; // Allow default back action (closing the app) if no history
+    };
+
+    useEffect(() => {
+        if (Platform.OS === 'android') {
+            BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+        }
+
+        return () => {
+            if (Platform.OS === 'android') {
+                BackHandler.removeEventListener('hardwareBackPress', handleBackButton);
+            }
+        };
+    }, []);
+
     useEffect(() => {
         if (theme === 'dark') {
             StatusBar.setBarStyle('light-content');
             NavigationBar.setBackgroundColorAsync('#1a1a1a');
-            NavigationBar.setButtonStyleAsync("light");
+            NavigationBar.setButtonStyleAsync('light');
         } else {
             StatusBar.setBarStyle('dark-content');
             NavigationBar.setBackgroundColorAsync('#e7f0ff');
-            NavigationBar.setButtonStyleAsync("dark");
+            NavigationBar.setButtonStyleAsync('dark');
         }
     }, [theme]);
 
     return (
         <SafeAreaView style={styles.container}>
             <WebView
+                ref={webViewRef}
                 source={{ uri: serverUrl }} // Next.js server address (e.g., http://localhost:3000)
                 style={{ flex: 1 }}
                 injectedJavaScript={`
@@ -46,6 +68,7 @@ const App = () => {
                     })();
                 `}
                 onMessage={handleWebViewMessage}
+                bounces={false}
             />
             <StatusBar backgroundColor={theme === 'dark' ? "#1a1a1a" : "#e7f0ff"} />
         </SafeAreaView>
