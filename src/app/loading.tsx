@@ -5,18 +5,16 @@ import styles from "./page.module.css";
 const Loading = () => {
     return (
         <div className={styles.container}>
-            <div>
-                <div className={styles.topBar}></div>
-                <div className={styles.listContainer}>
-                    {Array.from({ length: 6 }).map((_, index) => (
-                        <div key={index} className={styles.listItem}>
-                            <div className={styles.listTitle}></div>
-                            <div className={styles.listSubtitle}></div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className={styles.navbar}></div>
+            <svg className={styles.spinner} viewBox="0 0 50 50">
+                <circle 
+                    className={styles.path} 
+                    cx="25" 
+                    cy="25" 
+                    r="20" 
+                    fill="none" 
+                    stroke-width="5"
+                ></circle>
+            </svg>
         </div>
     );
 };

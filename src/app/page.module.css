@@ -27,52 +27,46 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: space-between;
-    gap: 1.5rem;
-    height: 100svh; 
-    background-color: var(--background);
-    color: var(--text-color);
+    align-items: center ;
+    justify-content: center;
+    height: 100svh !important;
 }
 
-.topBar {
+.spinner {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -1.5625rem 0 0 -1.5625rem;
+    width: 3.125rem;
     height: 3.125rem;
-    margin: 1rem;
-    border-radius: 6.25rem;
-    background-color: var(--topbar-background);
-    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
 }
-
-.listContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; 
-    margin: 0 1rem 1rem 1rem;
+  
+.spinner .path {
+    stroke:  var(--link-300);
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
 }
-
-.listItem {
-    padding: 2rem;
-    border-radius: 0.625rem; 
-    background-color: var(--skeleton-bg);
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
-.listTitle {
-    height: 1.25rem;
-    width: 70%;
-    background-color: var(--skeleton-foreground);
-    border-radius: 0.25rem;
-    margin-bottom: 0.5rem;
+  
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 9.375rem;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 5.625rem, 9.375rem;
+        stroke-dashoffset: -2.1875rem;
+    }
+    100% {
+        stroke-dasharray: 5.625rem, 9.375rem;
+        stroke-dashoffset: -7.75rem;
+    }
 }
-
-.listSubtitle {
-    height: 0.9375rem;
-    width: 50%; 
-    background-color: var(--skeleton-foreground);
-    border-radius: 0.25rem;
-}
-
-.navbar {
-    height: 3.75rem; 
-    background-color: var(--navbar-background);
-    box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-}
+  
