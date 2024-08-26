@@ -5,6 +5,7 @@
   "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
+    "electron": "electron dist/main.js",
     "start": "tsc && electron dist/main.js",
     "dist": "electron-builder"
   },
@@ -39,5 +40,9 @@
     "electron": "^32.0.1",
     "electron-builder": "^24.13.3",
     "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "tslib": "^2.7.0"
   }
 }

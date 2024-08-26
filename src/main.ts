@@ -1,5 +1,9 @@
 import { app, BrowserWindow } from 'electron';
-import * as path from 'path';
+import { join } from 'path';
+import dotenv from "dotenv";
+
+dotenv.config();
+const __rootname = process.cwd();
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
@@ -9,12 +13,12 @@ function createWindow() {
             nodeIntegration: true,
             contextIsolation: false,
             // Preload can be used to enhance security by separating the Electron API from the renderer
-            preload: path.join(__dirname, 'preload.js'), 
+            preload: join(__rootname, 'dist/preload.js'), 
         },
     });
 
-    const server: string = process.env.SERVER || "http://localhost:3000";
-    const builtPath: string = process.env.BUILTPATH || `file://${path.join(__dirname, '../out/index.html')}`; // copy out folder from next.js build;
+    const server: string = process.env.SERVER || "http://localhost:3000/settings";
+    const builtPath: string = process.env.BUILTPATH || `file://${join(__dirname, '../out/index.html')}`; // copy out folder from next.js build;
 
     const startURL = app.isPackaged
         ? builtPath // Path to built Next.js app for loacl app
