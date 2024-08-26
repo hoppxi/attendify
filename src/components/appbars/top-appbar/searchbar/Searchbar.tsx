@@ -1,4 +1,4 @@
-
+'use client'
 import React, { useState, useEffect, useRef } from "react";
 import style from "./Searchbar.module.css";
 import Button from "@/components/buttons/Buttons";
