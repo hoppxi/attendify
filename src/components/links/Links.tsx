@@ -6,10 +6,11 @@ interface LinkProps extends NextLinkProps {
     children: ReactNode;
     className?: string;
     type?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
-    padded?: boolean
+    padded?: boolean;
+    outlined?: boolean;
 }
 
-const Link: FC<LinkProps> = ({ children, type, padded, className, ...props }) => {
+const Link: FC<LinkProps> = ({ children, type, padded, className, outlined, ...props }) => {
     const getLinkTypeStyle = () => {
         switch (type) {
         case 'primary':
@@ -35,7 +36,7 @@ const Link: FC<LinkProps> = ({ children, type, padded, className, ...props }) =>
     return (
         <NextLink 
             {...props} 
-            className={`${style.link} ${className ? className : ""} ${getLinkTypeStyle()}${padded ? style.padded : ""}`}
+            className={`${style.link} ${className ? className : ""} ${getLinkTypeStyle()} ${padded ? style.padded : ""} ${outlined ? style.outlined : ""}`}
         >
             {children}
         </NextLink>
