@@ -1,0 +1,43 @@
+{
+  "name": "attendify",
+  "version": "1.0.0",
+  "description": "electron app code for Attendify",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && electron dist/main.js",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.erar111.attendify",
+    "files": [
+      "dist/**/*",
+      "out/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": ""
+    },
+    "win": {
+      "target": "nsis",
+      "icon": ""
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
+      "icon": "path/to/icon.png"
+    }
+  },
+  "author": "Ermiyas Arage <ermiyasarage2023@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.5.4"
+  }
+}
