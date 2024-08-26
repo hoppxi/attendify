@@ -51,9 +51,15 @@ export default function InterfaceSettings() {
             document.documentElement.classList.remove('dark-mode');
             document.documentElement.classList.add('light-mode');
             localStorage.setItem('theme', 'light');
-        } else {
-            document.documentElement.classList.remove('dark-mode');
-            document.documentElement.classList.remove('light-mode');
+        } else if (selectedTheme === 'system') {
+            const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            if (prefersDarkScheme) {
+                document.documentElement.classList.add('dark-mode');
+                document.documentElement.classList.remove('light-mode');
+            } else {
+                document.documentElement.classList.add('light-mode');
+                document.documentElement.classList.remove('dark-mode');
+            }
             localStorage.removeItem('theme');
         }
     };
