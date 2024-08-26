@@ -1,0 +1,22 @@
+
+.align_horizontal {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.searchbar_container {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.searchbar_wrapper {
+    max-width: 50rem;
+    width: 100%;
+}
