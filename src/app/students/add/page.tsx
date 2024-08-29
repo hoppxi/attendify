@@ -34,11 +34,8 @@ export default function Add() {
                                 <div className={styles.profile_pic_container}>
                                     <Image src={"/images/profile-pic/default-avatar-icon.png"} alt="" width="100" height="100" className={styles.profile_pic} />
                                     <div className={styles.ab_button_pp}>
-                                        <Button variant="icon" icon="edit"></Button>
+                                        <Button variant="icon" icon="edit" type="button"></Button>
                                     </div>
-                                </div>
-                                <div className={styles.qr_code_container}>
-                                    <Image src={"/images/test-qr-code.png"} alt="" width="100" height="100" className={styles.qr_code}></Image>
                                 </div>
                             </div>
                             <div className={styles.field}>
