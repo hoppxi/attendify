@@ -61,8 +61,6 @@ CREATE TABLE students (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     password VARCHAR(255) NOT NULL,
     FOREIGN KEY (school_id) REFERENCES schools(id) ON DELETE SET NULL,
-    FOREIGN KEY (mother_id) REFERENCES parents(id),
-    FOREIGN KEY (father_id) REFERENCES parents(id)
 );
 
 -- Create the parents table
@@ -77,8 +75,16 @@ CREATE TABLE parents (
     password VARCHAR(255) NOT NULL,
     job VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE SET NULL
 );
+
+-- Add foreign key constraints to the students table
+ALTER TABLE students
+ADD FOREIGN KEY (mother_id) REFERENCES parents(id) ON DELETE SET NULL,
+ADD FOREIGN KEY (father_id) REFERENCES parents(id) ON DELETE SET NULL;
+
+-- Add foreign key constraints to the parents table
+ALTER TABLE parents
+ADD FOREIGN KEY (student_id) REFERENCES students(id) ON DELETE SET NULL;
 
 -- Indexes for optimization
 CREATE INDEX idx_companies_email ON companies(email);
