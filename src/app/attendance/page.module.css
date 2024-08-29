@@ -45,3 +45,141 @@
     }
 
 }
+
+/* Qucik */
+
+.no_data {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10rem;
+}
+
+.no_data_description {
+    text-align: center;
+}
+
+.no_data_description :first-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.no_data_description :last-child {
+    font-size: smaller;
+}
+
+/* Print */
+.printable_section {
+    max-width: 50rem;
+    size: A4;
+    display: grid !important;
+    grid-template-columns: repeat(3, 31%);
+    grid-template-rows: repeat(5, 25%);
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.image_box {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+img.print_qr_code {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.print_action {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    align-items: end;
+    max-width: 50rem;
+}
+
+.print_action :first-child {
+    white-space: nowrap
+}
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 1cm !important;
+    }
+
+    body *:not(.print_container, .print_container *) {
+        display: none;
+    }
+
+    .print_container {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .print_container > :not(:last-child){
+        display: none;
+    }
+
+    .print_action {
+        display: none;
+    }
+
+}
+
+
+/* Manual Attendance */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+  
+.pagination li {
+    margin: 0 .1rem;
+}
+  
+.pagination a {
+    border-radius: 10rem;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+}
+  
+.pagination a:hover {
+    background-color: var(--secondary-100);
+}
+  
+.active a {
+    /* background-color: var(--link-100); */
+    border: .1rem solid var(--link-100);
+    color: var(--link-100);
+}
+
+.prev_next_btn {
+    padding: 1rem;
+}
+
+.accordion_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .7rem;
+}
