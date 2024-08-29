@@ -7,7 +7,8 @@
     "build": "tsc",
     "electron": "electron dist/main.js",
     "start": "tsc && electron dist/main.js",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dev": "ts-node src/main.ts"
   },
   "build": {
     "appId": "com.erar111.attendify",
@@ -36,13 +37,16 @@
   "author": "Ermiyas Arage <ermiyasarage2023@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^22.5.0",
     "electron": "^32.0.1",
     "electron-builder": "^24.13.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "tslib": "^2.7.0"
   }
 }

@@ -1,9 +1,20 @@
 import { app, BrowserWindow } from 'electron';
 import { join } from 'path';
 import dotenv from "dotenv";
+import express from 'express';
 
 dotenv.config();
 const __rootname = process.cwd();
+
+// Create an Express server for the local out files so that electron can load js and css
+const server = express();
+const staticPath = join(__rootname, 'out');
+server.use(express.static(staticPath));
+
+const PORT: number | string | undefined = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 
 function createWindow() {
     const mainWindow = new BrowserWindow({
@@ -17,13 +28,7 @@ function createWindow() {
         },
     });
 
-    const server: string = process.env.SERVER || "http://localhost:3000/settings";
-    const builtPath: string = process.env.BUILTPATH || `file://${join(__dirname, '../out/index.html')}`; // copy out folder from next.js build;
-
-    const startURL = app.isPackaged
-        ? builtPath // Path to built Next.js app for loacl app
-        : server; // Use the Next.js development server URL for development
-
+    const startURL: string = `http://localhost:${PORT}`;
     mainWindow.loadURL(startURL);
 }
 
