@@ -5,10 +5,10 @@ import { Suspense } from "react";
 import styles from "./page.module.css";
 import useScreenSize from "@/hooks/useScreenSize";
 import { useNavDrawer } from "@/context/NavDrawerContext";
-import CoreSearchbarAppbar from "@/widgets/UI/SearchbarAppbar";
 import CoreNormalAppbar from "@/widgets/UI/NormalAppbar";
 import CoreNavDrawer from "@/widgets/UI/NavDrawer";
 import CoreNavbar from "@/widgets/UI/Navbar";
+import SearchbarAppbar from "@/components/appbars/top-appbar/searchbar/Searchbar";
 import Container from "@/components/containers/Containers";
 import Button from "@/components/buttons/Buttons";
 import List, {ListItem} from "@/components/lists/Lists";
@@ -16,7 +16,7 @@ import {data} from "../students/list/data";
 import ReactPaginate from "react-paginate";
 import { useRouter, useSearchParams } from "next/navigation";
 
-function ReportsContent() {
+const ReportsContent: React.FC = () => {
     const { isNavDrawerOpen, toggleNavDrawer } = useNavDrawer();
     const [pageNumber, setPageNumber] = React.useState(0);
     const studentsPerPage = 10;
@@ -33,14 +33,37 @@ function ReportsContent() {
     const grade = searchParams.get('grade');
     const stream = searchParams.get('stream');
     const section = searchParams.get('section');
+    const date = searchParams.get('date');
     
     if (!show && !grade && !section) router.push("/reports/portal");
 
     return (
         <>
-            {isLargeScreen ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Reports" /> : <CoreSearchbarAppbar title="Today's Record - Reports" />}
+            {isLargeScreen 
+                ? <CoreNormalAppbar navdrawerOpener={toggleNavDrawer} title="Reports" />
+                : <SearchbarAppbar
+                    buttons={
+                        <>
+                            {(!date || date === "today") 
+                                && <Button variant="icon" href="/attendance/edit/portal" tooltip="Edit" icon="playlist_add_check_circle"/>
+                            }
+                            <Button variant="icon" icon="settings" tooltip="Settings" href="/settings" />
+                            <Button variant="icon" icon="notifications" tooltip="Notifications" href="/notifications" alignTooltip="left"></Button>
+                        </>
+                    }
+                    title={"Notifications"}
+                />
+            }
             {isLargeScreen ? <CoreNavDrawer isOpen={isNavDrawerOpen} active={4} /> : <CoreNavbar active={4} />}
-            <Container hasSearchbarAppbar navDrawerOpen={isNavDrawerOpen} title="Today's Records" icon="playlist_add_check_circle">
+            <Container 
+                hasSearchbarAppbar 
+                navDrawerOpen={isNavDrawerOpen} 
+                title="Today's Records" 
+                rightActions={ (!date || date === "today") 
+                    ? <Button variant="icon" href="/attendance/edit/portal" tooltip="Edit" icon="playlist_add_check_circle"/>
+                    : ""
+                }
+            >
                 <div className={styles.list}>
                     <List heading={`${show} Students of ${grade} - ${section}`}>
                         {displayedData.map((student) => (
