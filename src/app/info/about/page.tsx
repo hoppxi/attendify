@@ -37,7 +37,7 @@ export default function About() {
 					</p>
 					
 					<p className={styles.paragraph}>
-						One of the standout features of Attendify is its integration with QR code technology. This allows for quick and accurate registration and attendance of students, enhancing both security and convenience. The QR code system is implemented using a combination of <strong>Python</strong>, <strong>C++</strong>, <strong>Java</strong>, and <strong>Flutter</strong>, showcasing our team's versatility in handling complex, multi-language projects.
+						One of the standout features of Attendify is its integration with QR code technology. This allows for quick and accurate registration and attendance of students, enhancing both security and convenience. The QR code system is implemented using a combination of <strong>Python</strong>, <strong>C++</strong>, <strong>Java</strong>, and <strong>Flutter</strong>, showcasing our team&apos;s versatility in handling complex, multi-language projects.
 					</p>
 
 					<h2 className={styles.subHeader}>Our Vision</h2>

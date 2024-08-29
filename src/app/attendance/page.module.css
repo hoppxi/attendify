@@ -101,7 +101,7 @@ img.print_qr_code {
     display: flex;
     flex-direction: column;
     margin-top: 5rem;
-    align-items: end;
+    align-items: flex-end;
     max-width: 50rem;
 }
 

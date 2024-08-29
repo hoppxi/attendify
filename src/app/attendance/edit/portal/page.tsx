@@ -11,7 +11,7 @@ import { useNavDrawer } from "@/context/NavDrawerContext";
 import Container from "@/components/containers/Containers";
 import List, { ListItem } from "@/components/lists/Lists";
 
-export default function editAttendancePortal() {
+export default function EditAttendancePortal() {
 	const { isNavDrawerOpen, toggleNavDrawer } = useNavDrawer();
 
 	const isLargeScreen: boolean = useScreenSize(1024);

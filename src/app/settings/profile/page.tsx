@@ -44,6 +44,8 @@ const DialogForm: React.FC<DialogFormProps> = memo(({ isOpen, onClose, title, in
 	</Dialog>
 ));
 
+DialogForm.displayName = "DialogForm";
+
 export default function ProfileSettings() {
 	const { isNavDrawerOpen, toggleNavDrawer } = useNavDrawer();
 	const isLargeScreen: boolean = useScreenSize(1024);

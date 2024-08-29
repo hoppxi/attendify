@@ -98,7 +98,7 @@ export default function Attendance() {
                             </>
                         }
                     >
-                        <>Are you sure you want to remove this student's QR Code from the quick?</>
+                        <>Are you sure you want to remove this student&apos;s QR Code from the quick?</>
                     </Dialog>
                     { showAlert && 
                         <Alert type="info" onClose={() => setShowAlert(false)} message="Click the student to remove from the quick"></Alert>
