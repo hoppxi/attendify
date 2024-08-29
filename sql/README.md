@@ -1,4 +1,3 @@
-```markdown
 # SQL Directory
 
 This directory contains SQL scripts for setting up and managing the database for the project.
@@ -32,4 +31,3 @@ Replace `<username>` and `<database_name>` with your MySQL username and database
 ## Notes
 
 - For development, it's recommended to run the `schema.sql` and `seed.sql` files to get a fresh setup.
-```
