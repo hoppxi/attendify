@@ -28,7 +28,7 @@
     justify-content: space-between;
     position: relative;
     width: 100%;
-    padding: 1.3rem;
+    padding: 1.3rem !important;
     cursor: pointer;
     position: relative;
     overflow: hidden;
