@@ -31,9 +31,8 @@ export default function Account() {
 						</div>
 					</div>
 					<div className={style.action_buttons}>
-						<Button variant="filled-tonal" icon="history" href="/account/activities" tooltip="My Activities" />
-						<Button variant="filled-tonal" icon="settings" href="/settings/account-settings" tooltip="Settings" />
-						<Button variant="filled-tonal" icon="help" href="/settings/account-settings" tooltip="Help" />
+						<Button variant="filled-tonal" icon="settings" href="/settings/account" tooltip="Settings" />
+						<Button variant="filled-tonal" icon="help" href="/info/support/help" tooltip="Help" />
 					</div>
 					<div className={style.description_section}>
 						<p>Description</p><br />

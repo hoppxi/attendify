@@ -37,7 +37,7 @@ export default function AccountSettings() {
 				</List>
 				<List heading="Apps and features">
 					<ListItem heading="Share Profile" icon="account_circle" onClick={() => setShareProfileDialog(true)} />
-					<ListItem heading="Manage History" icon="history" href="/account/history" />
+					<ListItem heading="Manage Activities" icon="history" href="/account/activities" />
 					<ListItem heading="QR code settings" icon="qr_code" href="/settings/qr-code" />
 				</List>
 				<List>

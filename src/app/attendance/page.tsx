@@ -19,11 +19,9 @@ export default function Attendance() {
 
 	const cardData = [
 		{ heading: "Print Quick", href: "/attendance/print/quick", buttonText: "See panel", details: "Explore the comprehensive and detailed list of all students currently enrolled, allowing you to review and manage their information with ease." },
-		{ heading: "Generate A report", href: "/attendance/generate-report", buttonText: "Generate", details: "Explore the comprehensive and detailed list of all students currently enrolled, allowing you to review and manage their information with ease." },
-		{ heading: "Scan QR code", href: "/attendance/scan", buttonText: "Scan", details: "Register a new student by adding their details to the system, ensuring they are included in the student database." },
+		{ heading: "Report", href: "/reports/portal", buttonText: "See Report", details: "Explore the comprehensive and detailed list of all students currently enrolled, allowing you to review and manage their information with ease." },
 		{ heading: "QR code not working", href: "/attendance/manual", buttonText: "Attend Manually", details: "Register a new student by adding their details to the system, ensuring they are included in the student database." },
 		{ heading: "Restart Attendance", href: "#", onClick: () => setRestartDialog(true), buttonText: "Restart", details: "Review the records of all students who were absent today, providing an up-to-date overview of today's attendance." },
-		{ heading: "Help and Support", href: "/help", buttonText: "Help", details: "Review the records of all students who were absent today, providing an up-to-date overview of today's attendance." },
 	];
 	
 	return (
@@ -54,7 +52,7 @@ export default function Attendance() {
 					actions={
 						<>
 							<Button variant="outlined" onClick={() => setRestartDialog(false)}>Cancle</Button>
-							<Button variant="filled" href="/attendance/restart">Continue</Button>
+							<Button variant="filled">Continue</Button>
 						</>
 					}
 				>

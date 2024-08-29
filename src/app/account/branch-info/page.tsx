@@ -31,8 +31,8 @@ export default function BranchProfile() {
 						</div>
 					</div>
 					<div className={style.action_buttons}>
-						<Button variant="filled-tonal" icon="history" href="/account/activities" tooltip="Branch Activities" />
-						<Button variant="filled-tonal" icon="settings" href="/settings/account-settings/branch" tooltip="Branch Settings" />
+						<Button variant="filled-tonal" icon="history" href="/account/activities" tooltip="Activities" />
+						<Button variant="filled-tonal" icon="settings" href="/settings/account/branches" tooltip="Branch Settings" />
 						<Button variant="filled-tonal" icon="help" href="/settings/account-settings" tooltip="Help" />
 					</div>
 					<div className={style.description_section}>
