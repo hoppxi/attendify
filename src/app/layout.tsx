@@ -72,15 +72,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
     const applyFontSize = (selectedFontSize: string) => {
         document.documentElement.classList.remove('small-font-size', 'medium-font-size', 'large-font-size');
-        if (selectedFontSize === 'medium') {
-            document.documentElement.style.fontSize = "14px";
-            localStorage.setItem('font-size', 'medium');
+        if (selectedFontSize === 'small') {
+            document.documentElement.style.fontSize = "12px";
+            localStorage.setItem('font-size', 'small');
         } else if (selectedFontSize === 'large') {
             document.documentElement.style.fontSize = "16px";
             localStorage.setItem('font-size', 'large');
         } else {
-            document.documentElement.style.fontSize = "12px";
-            localStorage.setItem('font-size', 'small');
+            document.documentElement.style.fontSize = "14px";
+            localStorage.setItem('font-size', 'medium');
         }
     };
 
