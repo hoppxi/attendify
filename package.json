@@ -2,36 +2,32 @@
   "name": "attendify",
   "version": "1.0.0",
   "description": "electron app code for Attendify",
-  "main": "dist/main.js",
+  "main": "build/main.js",
   "scripts": {
     "build": "tsc",
-    "electron": "electron dist/main.js",
-    "start": "tsc && electron dist/main.js",
+    "electron": "electron build/main.js",
+    "start": "tsc && electron build/main.js",
     "dist": "electron-builder",
     "dev": "ts-node src/main.ts"
   },
   "build": {
     "appId": "com.erar111.attendify",
     "files": [
-      "dist/**/*",
-      "out/**/*",
+      "build/out/**/*",
+      "build/preload/preload.js",
+      "build/main.js",
+      "build/server.js",
+      "build/windowManager.js",
       "package.json"
     ],
-    "mac": {
-      "target": "dmg",
-      "icon": ""
-    },
     "win": {
-      "target": "nsis",
-      "icon": ""
-    },
-    "linux": {
       "target": [
-        "AppImage",
-        "deb",
-        "rpm"
-      ],
-      "icon": "path/to/icon.png"
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   },
   "author": "Ermiyas Arage <ermiyasarage2023@gmail.com>",
@@ -47,6 +43,7 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "find-free-port": "^2.0.0",
     "tslib": "^2.7.0"
   }
 }

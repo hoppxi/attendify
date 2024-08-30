@@ -1,38 +1,17 @@
+
 import { app, BrowserWindow } from 'electron';
-import { join } from 'path';
-import dotenv from "dotenv";
-import express from 'express';
+import { createWindow } from './windowManager';
+import { startServer } from './server';
 
-dotenv.config();
-const __rootname = process.cwd();
+let startURL: string = '';
+let PORT: number = 0;
 
-// Create an Express server for the local out files so that electron can load js and css
-const server = express();
-const staticPath = join(__rootname, 'out');
-server.use(express.static(staticPath));
-
-const PORT: number | string | undefined = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+startServer((port: number) => {
+    PORT = port;
+    // Using remote server is recommend
+    startURL = process.env.REMOTE_SERVER_URL || `http://localhost:${PORT}`;
+    app.whenReady().then(() => createWindow(startURL));
 });
-
-function createWindow() {
-    const mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            // Preload can be used to enhance security by separating the Electron API from the renderer
-            preload: join(__rootname, 'dist/preload.js'), 
-        },
-    });
-
-    const startURL: string = `http://localhost:${PORT}`;
-    mainWindow.loadURL(startURL);
-}
-
-app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
@@ -41,7 +20,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
+    if (BrowserWindow.getAllWindows().length === 0 && startURL) {
+        createWindow(startURL);
     }
 });
