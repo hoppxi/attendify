@@ -11,6 +11,7 @@ These three routes will be the main ones visible in the bottom navigation bar:
 1. **/parent/**
 2. **/parent/grades**
 3. **/parent/attendance**
+4. **/parent/profile**
 
 #### **Route Structure**
 
@@ -30,9 +31,12 @@ These three routes will be the main ones visible in the bottom navigation bar:
    - **/parent/attendance** - Overview of attendance records.
    - **/parent/attendance/report-absence** - Report child’s absence.
 
+4. **Profile**
+   - **/parent/profile/** - Parent profile and list of linked students.
+   - **/parent/profile/student-profile** - Student profile.
+
 #### **Other**
 
-- **/parent/profile/student-profile** - Student profile.
 - **/parent/communication/teacher-contacts** - Teacher contacts.
 - **/parent/communication/feedback** - Provide feedback and suggestions.
 - **/parent/schedule/class-schedule** - View class schedule.
