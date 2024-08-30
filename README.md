@@ -67,14 +67,14 @@ These three routes will be the main ones visible in the bottom navigation bar:
 
 ### Current Routes
 
-### **Navbar Routes**
+#### **Navbar Routes**
 These three routes will be the main ones visible in the bottom navigation bar:
 
 1. **/teacher/dashboard**
 2. **/teacher/gradebook**
 3. **/teacher/attendance**
 
-### **Route Structure**
+#### **Route Structure**
 
 1. **Dashboard (Can be home)**
    - **/teacher/dashboard** - Overview of classes, announcements, and upcoming tasks.
@@ -93,7 +93,7 @@ These three routes will be the main ones visible in the bottom navigation bar:
    - **/teacher/attendance/attendance-reports** - View and generate attendance reports.
    - **/teacher/attendance/report-absence** - Report student absences.
 
-### **Other**
+#### **Other**
 
 - **/teacher/classes/manage** - Manage class details and rosters.
 - **/teacher/classes/schedule** - View and edit class schedules.
