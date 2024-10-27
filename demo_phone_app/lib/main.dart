@@ -15,7 +15,7 @@ void main() async {
   ));
 }
 
-String host = "192.168.1.2";
+String host = "192.168.8.132";
 
 class Demo extends StatefulWidget {
   const Demo({super.key});
@@ -64,8 +64,8 @@ class _DemoState extends State<Demo> {
             child: GestureDetector(
               onTap: () async {
                 try {
-                  var response = await http.get(Uri.parse(
-                      "http://192.168.185.200/attendance?schoolID=1"));
+                  var response = await http
+                      .get(Uri.parse("http://$host/attendance?schoolID=1"));
                   Map attendanceData = json.decode(response.body);
                   Navigator.push(context, MaterialPageRoute(builder: (build) {
                     return AttendancePage(attendanceData: attendanceData);
@@ -95,7 +95,7 @@ class _DemoState extends State<Demo> {
 
                 var request = await http.MultipartRequest(
                   "POST",
-                  Uri.parse("http://192.168.185.200/qrcode/attendStudent"),
+                  Uri.parse("http://$host/qrcode/attendStudent"),
                 );
                 request.files.add(http.MultipartFile(
                     "image", image.readAsBytes().asStream(), image.lengthSync(),

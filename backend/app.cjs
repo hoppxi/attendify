@@ -1,13 +1,13 @@
 const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
-const QRCode = require("./routes/QRCODE")
+const QRCodeRouter = require("./routes/QRCODE")
+const APIRouter = require("./routes/API")
 const Attendace  = require("./models/Attendance")
 
 app.use(bodyParser())
-app.use("/qrcode", QRCode)
-
-
+app.use("/qrcode", QRCodeRouter)
+app.use("/api", APIRouter)
 app.get("/attendance", async (req,res) => {
     var schoolID = req.query.schoolID
     var response = await Attendace.getTodayAttendance(schoolID)

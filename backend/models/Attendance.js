@@ -26,6 +26,18 @@ class Attendace {
       });
       return fullAttendance
     }
+    static async getPresentStudents(schoolID) {
+        var today = `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
+        var AllAttendance = await AttendanceModel.findOne({date: today})
+        if (AllAttendance) {
+            var schoolData = new Map(AllAttendance.schools).get(schoolID)
+            return schoolData["Present"]
+        }
+        else {
+           return []
+        }
+       
+    }
     static async getTodayAttendance(schoolID) {
         var today = `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
         var AllAttendance = await AttendanceModel.findOne({date: today})
