@@ -52,7 +52,8 @@ class Attendace {
     }
     
     static async attendStudent(obfuscatedStudentID) {
-        var today = `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
+        try {
+            var today = `${new Date().getFullYear()}/${new Date().getMonth()}/${new Date().getDate()}`
         var attendace = await AttendanceModel.findOne({date: today})
         var student = await Student.getStudentData(obfuscatedStudentID)
         if (attendace && student) {
@@ -62,6 +63,7 @@ class Attendace {
             schoolAttendance["Present"].push(student.id)
           }
           var result = await AttendanceModel.findOneAndUpdate({date:today}, {schools: previousAttendance}, {new: true})
+          return true
         }
         else if (student){
             var schoolID = String(student.school_id)
@@ -76,10 +78,17 @@ class Attendace {
                 }
             })
             attend.save()
+            return true
             
         }
         else {
             console.log("Student Not Found")
+            return false
+        }
+        }
+        catch (error) {
+            console.log(error)
+            return false
         }
        
     }
