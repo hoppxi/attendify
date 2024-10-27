@@ -1,19 +1,10 @@
-const express = require("express")
-const Attendace = require("../models/Attendance")
-const School = require("../models/School")
-const router = express()
+import express from 'express';
+import { getStudentsMiddleware } from '../middlewares/get-students.js';
 
-router.get("/attendance/today", async (req,res) => {
-    var schoolID = req.query.school_id
-    console.log(schoolID)
-    var presentStudents = await Attendace.getPresentStudents(schoolID)
-    var total_students = await School.getAllStudentsCount(schoolID)
+const router = express();
 
-    res.json({
-        "total_students": total_students,
-        "present_students": presentStudents.length,
-        "absent_students": total_students - presentStudents.length
-    })
-})
+router.get('/attendance/today',async (res, req) => {
+    await getStudentsMiddleware(res, req);
+});
 
-module.exports = router
+export default router;
