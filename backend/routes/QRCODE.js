@@ -35,5 +35,28 @@ router.post("/attendStudent", (req,res) => {
         
 })
 
+router.get("/getInfo", (req,res) => {
+    var form = new formidable.IncomingForm()
+    form.parse(req,(err,fields,files) => {
+        var imageFilePath = files.image[0].filepath
+        var buffer = fs.readFileSync(imageFilePath)
+        QR
+        jimp.read(buffer,(err,image) => {
+        if (err) console.log(err);
+        let qrCodeReader = new qrCode()
+        qrCodeReader.callback = async (err,value) => {
+           var obfuscatedStudentID = value.result
+           if (isStudentAttended) {
+            res.json(await Student.getStudentData(obfuscatedStudentID))
+           }
+           else {
+            res.json(errorResponse("QR Code is not recognized please try again ..."))
+           }
+        }
+        qrCodeReader.decode(image.bitmap)
+     })
+    })
+})
+
 
 module.exports = router
