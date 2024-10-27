@@ -1,8 +1,12 @@
-const express = require("express")
-const Attendace = require("../models/Attendance")
-const apiAttendanceRouter = require("./api/attendanceRouter")
-const School = require("../models/School")
-const router = express()
-router.use("/attendance", apiAttendanceRouter)
 
-module.exports = router
+import express from 'express';
+import { getStudentsMiddleware } from '../middlewares/get-students.js';
+
+const router = express();
+
+router.get('/attendance/today', async (res, req) => {
+    await getStudentsMiddleware(res, req);
+});
+
+
+export default router;
