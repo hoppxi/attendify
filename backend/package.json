@@ -12,6 +12,7 @@
         "prettier": "^3.3.3"
     },
     "dependencies": {
-        "dotenv": "^16.4.5"
+        "dotenv": "^16.4.5",
+        "jsqr": "^1.4.0"
     }
 }

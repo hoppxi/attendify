@@ -1,21 +1,17 @@
-import qrCode from 'qrcode-reader';
+import jsQR from 'jsqr'; // This library is shorter
 
 class QR {
+    static getQrCodeData(imageData) {
+        const code = jsQR(imageData.data, imageData.width, imageData.height);
 
-    static qrCodeReader = new qrCode();
-
-    static getQrCodeData(image) {
-        this.qrCodeReader.callback = (_err, value) => {
-            try {
-                console.log(value.result);
-                return value;
-            } catch (error) {
-                console.log(error);
-                return 'none';
-            }
-        };
-        return this.qrCodeReader.decode(image.bitmap);
+        if (code) {
+            console.log('QR code data:', code.data);
+            return code.data;
+        } else {
+            console.log('No QR code found.');
+            return false;
+        }
     }
 }
 
-export default QR;
+export { QR };

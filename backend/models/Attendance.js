@@ -14,7 +14,6 @@ const AttendanceSchema = Schema({
 const AttendanceModel = model('attendances', AttendanceSchema);
 
 class Attendace {
-
     static async calculateAbsentStudents(schoolData, schoolID) {
         const students = await query(
             'select * from students where school_id = ?',
@@ -71,11 +70,11 @@ class Attendace {
             const schoolID = String(student.school_id);
             const previousAttendance = new Map(attendace['schools']);
             const schoolAttendance = previousAttendance.get(schoolID);
-            
+
             if (!schoolAttendance['Present'].includes(student.id)) {
                 schoolAttendance['Present'].push(student.id);
             }
-            
+
             const result = await AttendanceModel.findOneAndUpdate(
                 { date: today },
                 { schools: previousAttendance },
