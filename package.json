@@ -12,6 +12,7 @@
     "@fontsource/material-symbols-outlined": "^5.0.38",
     "@fontsource/roboto": "^5.0.14",
     "attendify": "file:",
+    "mongoose": "^8.7.3",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
@@ -24,6 +25,6 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   }
 }

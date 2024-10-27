@@ -1,0 +1,21 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "format": "prettier --write .",
+        "format-check": "prettier --check ."
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "prettier": "^3.3.3"
+    },
+    "dependencies": {
+        "@zxing/library": "^0.21.3",
+        "backend": "file:",
+        "dotenv": "^16.4.5",
+        "jsqr": "^1.4.0",
+        "zxing": "^0.1.2"
+    }
+}
