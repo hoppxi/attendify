@@ -94,6 +94,7 @@ class Attendace {
             attend.save();
         } else {
             console.log('Student Not Found');
+
         }
     }
 }
