@@ -1,6 +1,6 @@
 To start
 ```bash
-git clone https://github.com/ermi111/attendify
+git clone https://github.com/hoppxi/attendify
 cd attendify
 ```
 
